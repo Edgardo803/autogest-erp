@@ -12,12 +12,17 @@ SECRET_KEY = config('SECRET_KEY', default='dev-insecure-key-change-in-production
 DEBUG = config('DEBUG', default=True, cast=bool)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1').split(',')
-# Permitir túneles ngrok para demo/TFM
-ALLOWED_HOSTS += ['.ngrok-free.app', '.ngrok-free.dev', '.ngrok.io', '.ngrok.app']
+# Permitir túneles ngrok y Railway para demo/TFM
+ALLOWED_HOSTS += [
+    '.ngrok-free.app', '.ngrok-free.dev', '.ngrok.io', '.ngrok.app',
+    '.railway.app', '.up.railway.app',   # Railway deployment
+]
 CSRF_TRUSTED_ORIGINS = [
     'https://*.ngrok-free.app',
     'https://*.ngrok-free.dev',
     'https://*.ngrok.io',
+    'https://*.railway.app',
+    'https://*.up.railway.app',
 ]
 
 # ===========================================================
