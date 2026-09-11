@@ -217,6 +217,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # ===========================================================
 # LOGGING — Para Auditoría interna
 # ===========================================================
+import os as _os
+_LOG_DIR = BASE_DIR / 'logs'
+_LOG_DIR.mkdir(exist_ok=True)   # Crea la carpeta si no existe (Railway)
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -230,7 +234,7 @@ LOGGING = {
         'file': {
             'level': 'INFO',
             'class': 'logging.FileHandler',
-            'filename': BASE_DIR / 'logs' / 'autogest.log',
+            'filename': _LOG_DIR / 'autogest.log',
             'formatter': 'verbose',
         },
         'console': {
