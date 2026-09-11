@@ -6,7 +6,7 @@ __pycache__/
 *.pyd
 .Python
 *.egg-info/
-dist/
+/dist/
 build/
 
 # Base de datos local (se genera con migrate)

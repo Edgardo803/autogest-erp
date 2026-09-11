@@ -200,14 +200,16 @@ USE_TZ = True
 # ===========================================================
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',
-    BASE_DIR / 'frontend' / 'dist' / 'assets',   # assets JS/CSS del build React
-]
 
-# WhiteNoise — compresión y caché de estáticos
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-WHITENOISE_ROOT = BASE_DIR / 'frontend' / 'dist'   # sirve favicon, icons y index desde raíz
+# Solo incluir directorios que existen
+_STATIC_DIRS = [BASE_DIR / 'static']
+if (BASE_DIR / 'frontend' / 'dist' / 'assets').exists():
+    _STATIC_DIRS.append(BASE_DIR / 'frontend' / 'dist' / 'assets')
+STATICFILES_DIRS = _STATIC_DIRS
+
+# WhiteNoise — compresión de estáticos (sin manifest para evitar errores en Railway)
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+WHITENOISE_ROOT = BASE_DIR / 'frontend' / 'dist'   # sirve index.html, favicon, assets desde raíz
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
