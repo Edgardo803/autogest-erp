@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { Header } from '../../components/layout/Header'
 import { ventasApi } from '../../api/client'
-import { Plus, Search, Car, Wrench, Users, ChevronRight, X, Phone, Mail, CreditCard, Wrench as WrenchIcon } from 'lucide-react'
+import { Plus, Search, Car, Wrench, Users, ChevronRight, X, Phone, Mail, CreditCard } from 'lucide-react'
 import { ModalCliente } from '../../components/modals/ModalCliente'
 import { ModalVenta } from '../../components/modals/ModalVenta'
 
@@ -170,7 +170,7 @@ function FichaCliente({ cliente, ventas, servicios, onClose }: {
         {/* Servicios de taller */}
         <div>
           <h3 style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-            <WrenchIcon size={14} /> Servicios de Taller ({serviciosCliente.length})
+            <Wrench size={14} /> Servicios de Taller ({serviciosCliente.length})
           </h3>
           {serviciosCliente.length === 0 ? (
             <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem' }}>Sin servicios registrados</p>
