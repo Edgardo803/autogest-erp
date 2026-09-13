@@ -159,9 +159,11 @@ class ProyeccionFinancieraViewSet(viewsets.ReadOnlyModelViewSet):
         """
         horizonte_dias = int(request.data.get('horizonte_dias', 30))
         datos = calcular_proyeccion(horizonte_dias)
+        # Campos que son solo informativos para la API, no campos del modelo
+        _excluir = {'horizonte_dias', 'cobros_cuotas_clientes', 'cobros_bancarios'}
         proyeccion = ProyeccionFinanciera.objects.create(
             creado_por=request.user,
-            **{k: v for k, v in datos.items() if k != 'horizonte_dias'}
+            **{k: v for k, v in datos.items() if k not in _excluir}
         )
         serializer = ProyeccionFinancieraSerializer(proyeccion)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
