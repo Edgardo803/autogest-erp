@@ -52,6 +52,12 @@ class VentaUnidad(ModeloBase):
         COMPLETO   = 'COMPLETO',  _('Pagado Completo')
         FINANCIADO = 'FINANCIADO',_('Financiado')
 
+    class TipoFinanciacion(models.TextChoices):
+        CONTADO  = 'CONTADO',  _('Contado (pago íntegro)')
+        CUOTAS   = 'CUOTAS',   _('Cuotas directas al concesionario')
+        BANCARIA = 'BANCARIA', _('Financiación bancaria (banco paga al concesionario)')
+        PROPIA   = 'PROPIA',   _('Financiación propia del concesionario (largo plazo)')
+
     # Relaciones principales
     cliente = models.ForeignKey(
         Cliente, on_delete=models.PROTECT, related_name='ventas_unidades'
@@ -77,7 +83,19 @@ class VentaUnidad(ModeloBase):
     )
     monto_financiado = models.DecimalField(
         max_digits=12, decimal_places=2, default=0,
-        verbose_name=_('Monto Financiado (€)')
+        verbose_name=_('Monto a Financiar (€)')
+    )
+    tipo_financiacion = models.CharField(
+        max_length=10,
+        choices=TipoFinanciacion.choices,
+        default=TipoFinanciacion.CUOTAS,
+        verbose_name=_('Tipo de Financiación'),
+        help_text=_(
+            'CONTADO: pago íntegro al momento. '
+            'CUOTAS: cliente paga cuotas directas. '
+            'BANCARIA: banco paga al concesionario de una vez. '
+            'PROPIA: concesionario financia a largo plazo.'
+        )
     )
     estado_pago = models.CharField(
         max_length=15, choices=EstadoPago.choices, default=EstadoPago.PENDIENTE
@@ -93,7 +111,18 @@ class VentaUnidad(ModeloBase):
 
     @property
     def saldo_pendiente(self):
-        return self.precio_acordado - self.anticipo - self.monto_financiado
+        """
+        Saldo real pendiente de cobro:
+        precio_acordado - anticipo - suma de cuotas/pagos efectivamente cobrados.
+        Para BANCARIA: el saldo es lo que el banco aún no ha ingresado.
+        Para CONTADO: 0 (el pago fue íntegro).
+        Para CUOTAS/PROPIA: lo que el cliente aún no ha pagado al concesionario.
+        """
+        from django.db.models import Sum as DSum
+        cobrado = self.pagos.filter(
+            pagado=True
+        ).aggregate(total=DSum('monto'))['total'] or Decimal('0')
+        return max(Decimal('0'), self.precio_acordado - self.anticipo - cobrado)
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)

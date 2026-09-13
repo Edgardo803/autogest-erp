@@ -1,46 +1,7 @@
 [
 {
-  "model": "sessions.session",
-  "pk": "hxyzhr3zwo792yse0jjbrc55bzp6mdn7",
-  "fields": {
-    "session_data": ".eJxVjEEOwiAQRe_C2pAyDgO4dO8ZyABTqZo2Ke3KeHfbpAvdvvf-f6vI61Lj2mSOQ1EXZdTplyXOTxl3UR483iedp3GZh6T3RB-26dtU5HU92r-Dyq1u61CKBUrBZs7YCYETAAPJ9wad3xhjMYQddYC-t-ICEvVnYu8koVj1-QLUIDdO:1wxSmm:5gLz21t81f4KMUqiJbOic7lTNxomFK1Ty3_eZ-uPY7c",
-    "expire_date": "2026-09-04T17:12:08.853Z"
-  }
-},
-{
-  "model": "token_blacklist.blacklistedtoken",
-  "pk": 1,
-  "fields": {
-    "token": 5,
-    "blacklisted_at": "2026-08-22T14:41:15.992Z"
-  }
-},
-{
-  "model": "token_blacklist.blacklistedtoken",
-  "pk": 2,
-  "fields": {
-    "token": 9,
-    "blacklisted_at": "2026-08-28T06:56:22.549Z"
-  }
-},
-{
-  "model": "token_blacklist.blacklistedtoken",
-  "pk": 3,
-  "fields": {
-    "token": 12,
-    "blacklisted_at": "2026-08-28T08:08:09.285Z"
-  }
-},
-{
-  "model": "token_blacklist.blacklistedtoken",
-  "pk": 4,
-  "fields": {
-    "token": 23,
-    "blacklisted_at": "2026-09-03T13:50:23.729Z"
-  }
-},
-{
   "model": "accounts.usuario",
+  "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$1500000$NcQRVrgAjJsXjkWYQkRdLo$4uGYTBpfZ1Ph+JSuThg9cl41fo1fX35rSvGfBybqqD0=",
     "last_login": "2026-08-21T17:12:08.852Z",
@@ -64,6 +25,7 @@
 },
 {
   "model": "accounts.usuario",
+  "pk": 2,
   "fields": {
     "password": "pbkdf2_sha256$1500000$CWER8272bpNA3QVAj3o99D$jTJj0UuCyirTSAlmhe1n5j/6RNULKlpEPHX+oA8LvR4=",
     "last_login": null,
@@ -87,6 +49,7 @@
 },
 {
   "model": "accounts.usuario",
+  "pk": 3,
   "fields": {
     "password": "pbkdf2_sha256$1500000$tHsUsynb7PbTUHwPKZlZlS$F0a934dAiCfepJCnLdjDki2JgwrYntEQdAFmzXufdmE=",
     "last_login": null,
@@ -110,6 +73,7 @@
 },
 {
   "model": "accounts.usuario",
+  "pk": 4,
   "fields": {
     "password": "pbkdf2_sha256$1500000$WJQskvYcsZzNXY47uQncm2$L+YcKE+gZJtXQpMjQSF6CmjEQyJoMZ6kFPtkuz1xsxo=",
     "last_login": null,
@@ -129,650 +93,6 @@
     "fecha_modificacion": "2026-08-21T17:08:48.151Z",
     "groups": [],
     "user_permissions": []
-  }
-},
-{
-  "model": "inventario.marca",
-  "pk": 1,
-  "fields": {
-    "creado_en": "2026-08-22T08:34:54.671Z",
-    "modificado_en": "2026-08-22T08:34:54.671Z",
-    "creado_por": null,
-    "modificado_por": null,
-    "activo": true,
-    "notas": "",
-    "nombre": "Toyota",
-    "pais_origen": "Japón"
-  }
-},
-{
-  "model": "inventario.marca",
-  "pk": 2,
-  "fields": {
-    "creado_en": "2026-08-22T08:34:54.673Z",
-    "modificado_en": "2026-08-22T08:34:54.673Z",
-    "creado_por": null,
-    "modificado_por": null,
-    "activo": true,
-    "notas": "",
-    "nombre": "Volkswagen",
-    "pais_origen": "Alemania"
-  }
-},
-{
-  "model": "inventario.marca",
-  "pk": 3,
-  "fields": {
-    "creado_en": "2026-08-22T08:34:54.675Z",
-    "modificado_en": "2026-08-22T08:34:54.675Z",
-    "creado_por": null,
-    "modificado_por": null,
-    "activo": true,
-    "notas": "",
-    "nombre": "Ford",
-    "pais_origen": "EEUU"
-  }
-},
-{
-  "model": "inventario.marca",
-  "pk": 4,
-  "fields": {
-    "creado_en": "2026-08-22T08:34:54.676Z",
-    "modificado_en": "2026-08-22T08:34:54.676Z",
-    "creado_por": null,
-    "modificado_por": null,
-    "activo": true,
-    "notas": "",
-    "nombre": "Seat",
-    "pais_origen": "España"
-  }
-},
-{
-  "model": "inventario.marca",
-  "pk": 5,
-  "fields": {
-    "creado_en": "2026-08-22T08:34:54.677Z",
-    "modificado_en": "2026-08-22T08:34:54.677Z",
-    "creado_por": null,
-    "modificado_por": null,
-    "activo": true,
-    "notas": "",
-    "nombre": "BMW",
-    "pais_origen": "Alemania"
-  }
-},
-{
-  "model": "inventario.modelo",
-  "pk": 1,
-  "fields": {
-    "creado_en": "2026-08-22T08:34:54.672Z",
-    "modificado_en": "2026-08-22T08:34:54.672Z",
-    "creado_por": null,
-    "modificado_por": null,
-    "activo": true,
-    "notas": "",
-    "marca": 1,
-    "nombre": "Corolla",
-    "año": 2022,
-    "tipo": "SEDAN"
-  }
-},
-{
-  "model": "inventario.modelo",
-  "pk": 2,
-  "fields": {
-    "creado_en": "2026-08-22T08:34:54.673Z",
-    "modificado_en": "2026-08-22T08:34:54.673Z",
-    "creado_por": null,
-    "modificado_por": null,
-    "activo": true,
-    "notas": "",
-    "marca": 1,
-    "nombre": "RAV4",
-    "año": 2023,
-    "tipo": "SUV"
-  }
-},
-{
-  "model": "inventario.modelo",
-  "pk": 3,
-  "fields": {
-    "creado_en": "2026-08-22T08:34:54.673Z",
-    "modificado_en": "2026-08-22T08:34:54.673Z",
-    "creado_por": null,
-    "modificado_por": null,
-    "activo": true,
-    "notas": "",
-    "marca": 1,
-    "nombre": "Yaris",
-    "año": 2021,
-    "tipo": "HATCHBACK"
-  }
-},
-{
-  "model": "inventario.modelo",
-  "pk": 4,
-  "fields": {
-    "creado_en": "2026-08-22T08:34:54.674Z",
-    "modificado_en": "2026-08-22T08:34:54.674Z",
-    "creado_por": null,
-    "modificado_por": null,
-    "activo": true,
-    "notas": "",
-    "marca": 2,
-    "nombre": "Golf",
-    "año": 2022,
-    "tipo": "HATCHBACK"
-  }
-},
-{
-  "model": "inventario.modelo",
-  "pk": 5,
-  "fields": {
-    "creado_en": "2026-08-22T08:34:54.674Z",
-    "modificado_en": "2026-08-22T08:34:54.674Z",
-    "creado_por": null,
-    "modificado_por": null,
-    "activo": true,
-    "notas": "",
-    "marca": 2,
-    "nombre": "Tiguan",
-    "año": 2023,
-    "tipo": "SUV"
-  }
-},
-{
-  "model": "inventario.modelo",
-  "pk": 6,
-  "fields": {
-    "creado_en": "2026-08-22T08:34:54.675Z",
-    "modificado_en": "2026-08-22T08:34:54.675Z",
-    "creado_por": null,
-    "modificado_por": null,
-    "activo": true,
-    "notas": "",
-    "marca": 2,
-    "nombre": "Passat",
-    "año": 2021,
-    "tipo": "SEDAN"
-  }
-},
-{
-  "model": "inventario.modelo",
-  "pk": 7,
-  "fields": {
-    "creado_en": "2026-08-22T08:34:54.675Z",
-    "modificado_en": "2026-08-22T08:34:54.675Z",
-    "creado_por": null,
-    "modificado_por": null,
-    "activo": true,
-    "notas": "",
-    "marca": 3,
-    "nombre": "Focus",
-    "año": 2021,
-    "tipo": "HATCHBACK"
-  }
-},
-{
-  "model": "inventario.modelo",
-  "pk": 8,
-  "fields": {
-    "creado_en": "2026-08-22T08:34:54.676Z",
-    "modificado_en": "2026-08-22T08:34:54.676Z",
-    "creado_por": null,
-    "modificado_por": null,
-    "activo": true,
-    "notas": "",
-    "marca": 3,
-    "nombre": "Kuga",
-    "año": 2022,
-    "tipo": "SUV"
-  }
-},
-{
-  "model": "inventario.modelo",
-  "pk": 9,
-  "fields": {
-    "creado_en": "2026-08-22T08:34:54.676Z",
-    "modificado_en": "2026-08-22T08:34:54.676Z",
-    "creado_por": null,
-    "modificado_por": null,
-    "activo": true,
-    "notas": "",
-    "marca": 3,
-    "nombre": "Puma",
-    "año": 2023,
-    "tipo": "CROSSOVER"
-  }
-},
-{
-  "model": "inventario.modelo",
-  "pk": 10,
-  "fields": {
-    "creado_en": "2026-08-22T08:34:54.677Z",
-    "modificado_en": "2026-08-22T08:34:54.677Z",
-    "creado_por": null,
-    "modificado_por": null,
-    "activo": true,
-    "notas": "",
-    "marca": 4,
-    "nombre": "León",
-    "año": 2022,
-    "tipo": "HATCHBACK"
-  }
-},
-{
-  "model": "inventario.modelo",
-  "pk": 11,
-  "fields": {
-    "creado_en": "2026-08-22T08:34:54.677Z",
-    "modificado_en": "2026-08-22T08:34:54.677Z",
-    "creado_por": null,
-    "modificado_por": null,
-    "activo": true,
-    "notas": "",
-    "marca": 4,
-    "nombre": "Ateca",
-    "año": 2023,
-    "tipo": "SUV"
-  }
-},
-{
-  "model": "inventario.modelo",
-  "pk": 12,
-  "fields": {
-    "creado_en": "2026-08-22T08:34:54.677Z",
-    "modificado_en": "2026-08-22T08:34:54.677Z",
-    "creado_por": null,
-    "modificado_por": null,
-    "activo": true,
-    "notas": "",
-    "marca": 4,
-    "nombre": "Ibiza",
-    "año": 2021,
-    "tipo": "HATCHBACK"
-  }
-},
-{
-  "model": "inventario.modelo",
-  "pk": 13,
-  "fields": {
-    "creado_en": "2026-08-22T08:34:54.678Z",
-    "modificado_en": "2026-08-22T08:34:54.678Z",
-    "creado_por": null,
-    "modificado_por": null,
-    "activo": true,
-    "notas": "",
-    "marca": 5,
-    "nombre": "Serie 3",
-    "año": 2023,
-    "tipo": "SEDAN"
-  }
-},
-{
-  "model": "inventario.modelo",
-  "pk": 14,
-  "fields": {
-    "creado_en": "2026-08-22T08:34:54.678Z",
-    "modificado_en": "2026-08-22T08:34:54.678Z",
-    "creado_por": null,
-    "modificado_por": null,
-    "activo": true,
-    "notas": "",
-    "marca": 5,
-    "nombre": "X3",
-    "año": 2022,
-    "tipo": "SUV"
-  }
-},
-{
-  "model": "inventario.unidad",
-  "pk": 1,
-  "fields": {
-    "creado_en": "2026-08-22T08:34:54.683Z",
-    "modificado_en": "2026-08-22T08:34:54.706Z",
-    "creado_por": [
-      "gerencia"
-    ],
-    "modificado_por": null,
-    "activo": true,
-    "notas": "",
-    "modelo": 1,
-    "numero_serie": "TOY-COR-2022-001",
-    "matricula": "1234-ABC",
-    "color": "Blanco Perla",
-    "kilometros": 0,
-    "estado": "VENDIDA",
-    "precio_costo": "18500.00",
-    "precio_venta": "23900.00",
-    "proveedor": 1,
-    "fecha_ingreso": "2026-05-12",
-    "fecha_venta": "2026-08-17"
-  }
-},
-{
-  "model": "inventario.unidad",
-  "pk": 2,
-  "fields": {
-    "creado_en": "2026-08-22T08:34:54.683Z",
-    "modificado_en": "2026-08-22T08:34:54.683Z",
-    "creado_por": [
-      "gerencia"
-    ],
-    "modificado_por": null,
-    "activo": true,
-    "notas": "",
-    "modelo": 2,
-    "numero_serie": "TOY-RAV-2023-001",
-    "matricula": "5678-DEF",
-    "color": "Gris Plata",
-    "kilometros": 0,
-    "estado": "NUEVA",
-    "precio_costo": "28000.00",
-    "precio_venta": "35500.00",
-    "proveedor": 1,
-    "fecha_ingreso": "2026-06-15",
-    "fecha_venta": null
-  }
-},
-{
-  "model": "inventario.unidad",
-  "pk": 3,
-  "fields": {
-    "creado_en": "2026-08-22T08:34:54.684Z",
-    "modificado_en": "2026-08-22T08:34:54.700Z",
-    "creado_por": [
-      "gerencia"
-    ],
-    "modificado_por": null,
-    "activo": true,
-    "notas": "",
-    "modelo": 3,
-    "numero_serie": "TOY-YAR-2021-001",
-    "matricula": "9012-GHI",
-    "color": "Rojo Carmín",
-    "kilometros": 15000,
-    "estado": "VENDIDA",
-    "precio_costo": "10500.00",
-    "precio_venta": "14900.00",
-    "proveedor": 1,
-    "fecha_ingreso": "2026-06-13",
-    "fecha_venta": "2026-07-08"
-  }
-},
-{
-  "model": "inventario.unidad",
-  "pk": 4,
-  "fields": {
-    "creado_en": "2026-08-22T08:34:54.684Z",
-    "modificado_en": "2026-08-22T08:34:54.707Z",
-    "creado_por": [
-      "gerencia"
-    ],
-    "modificado_por": null,
-    "activo": true,
-    "notas": "",
-    "modelo": 4,
-    "numero_serie": "VW-GOL-2022-001",
-    "matricula": "3456-JKL",
-    "color": "Negro Azabache",
-    "kilometros": 0,
-    "estado": "VENDIDA",
-    "precio_costo": "22000.00",
-    "precio_venta": "28500.00",
-    "proveedor": 2,
-    "fecha_ingreso": "2026-05-20",
-    "fecha_venta": "2026-08-20"
-  }
-},
-{
-  "model": "inventario.unidad",
-  "pk": 5,
-  "fields": {
-    "creado_en": "2026-08-22T08:34:54.684Z",
-    "modificado_en": "2026-08-22T08:34:54.684Z",
-    "creado_por": [
-      "gerencia"
-    ],
-    "modificado_por": null,
-    "activo": true,
-    "notas": "",
-    "modelo": 5,
-    "numero_serie": "VW-TIG-2023-001",
-    "matricula": "7890-MNO",
-    "color": "Azul Atlántico",
-    "kilometros": 0,
-    "estado": "NUEVA",
-    "precio_costo": "32000.00",
-    "precio_venta": "41000.00",
-    "proveedor": 2,
-    "fecha_ingreso": "2026-06-16",
-    "fecha_venta": null
-  }
-},
-{
-  "model": "inventario.unidad",
-  "pk": 6,
-  "fields": {
-    "creado_en": "2026-08-22T08:34:54.685Z",
-    "modificado_en": "2026-08-22T08:34:54.702Z",
-    "creado_por": [
-      "gerencia"
-    ],
-    "modificado_por": null,
-    "activo": true,
-    "notas": "",
-    "modelo": 6,
-    "numero_serie": "VW-PAS-2021-001",
-    "matricula": "2345-PQR",
-    "color": "Plata Reflex",
-    "kilometros": 28000,
-    "estado": "VENDIDA",
-    "precio_costo": "15000.00",
-    "precio_venta": "21500.00",
-    "proveedor": 2,
-    "fecha_ingreso": "2026-08-03",
-    "fecha_venta": "2026-07-23"
-  }
-},
-{
-  "model": "inventario.unidad",
-  "pk": 7,
-  "fields": {
-    "creado_en": "2026-08-22T08:34:54.685Z",
-    "modificado_en": "2026-08-22T08:34:54.703Z",
-    "creado_por": [
-      "gerencia"
-    ],
-    "modificado_por": null,
-    "activo": true,
-    "notas": "",
-    "modelo": 7,
-    "numero_serie": "FOR-FOC-2021-001",
-    "matricula": "6789-STU",
-    "color": "Blanco",
-    "kilometros": 22000,
-    "estado": "VENDIDA",
-    "precio_costo": "11000.00",
-    "precio_venta": "15900.00",
-    "proveedor": 3,
-    "fecha_ingreso": "2026-04-30",
-    "fecha_venta": "2026-08-02"
-  }
-},
-{
-  "model": "inventario.unidad",
-  "pk": 8,
-  "fields": {
-    "creado_en": "2026-08-22T08:34:54.686Z",
-    "modificado_en": "2026-08-22T08:34:54.686Z",
-    "creado_por": [
-      "gerencia"
-    ],
-    "modificado_por": null,
-    "activo": true,
-    "notas": "",
-    "modelo": 8,
-    "numero_serie": "FOR-KUG-2022-001",
-    "matricula": "0123-VWX",
-    "color": "Gris Magnetic",
-    "kilometros": 0,
-    "estado": "NUEVA",
-    "precio_costo": "26500.00",
-    "precio_venta": "33900.00",
-    "proveedor": 3,
-    "fecha_ingreso": "2026-08-07",
-    "fecha_venta": null
-  }
-},
-{
-  "model": "inventario.unidad",
-  "pk": 9,
-  "fields": {
-    "creado_en": "2026-08-22T08:34:54.686Z",
-    "modificado_en": "2026-08-22T08:34:54.686Z",
-    "creado_por": [
-      "gerencia"
-    ],
-    "modificado_por": null,
-    "activo": true,
-    "notas": "",
-    "modelo": 10,
-    "numero_serie": "SEA-LEO-2022-001",
-    "matricula": "4567-YZA",
-    "color": "Naranja Desire",
-    "kilometros": 0,
-    "estado": "NUEVA",
-    "precio_costo": "20000.00",
-    "precio_venta": "26500.00",
-    "proveedor": 4,
-    "fecha_ingreso": "2026-07-31",
-    "fecha_venta": null
-  }
-},
-{
-  "model": "inventario.unidad",
-  "pk": 10,
-  "fields": {
-    "creado_en": "2026-08-22T08:34:54.686Z",
-    "modificado_en": "2026-08-22T08:34:54.686Z",
-    "creado_por": [
-      "gerencia"
-    ],
-    "modificado_por": null,
-    "activo": true,
-    "notas": "",
-    "modelo": 11,
-    "numero_serie": "SEA-ATE-2023-001",
-    "matricula": "8901-BCD",
-    "color": "Blanco Nevada",
-    "kilometros": 0,
-    "estado": "NUEVA",
-    "precio_costo": "25000.00",
-    "precio_venta": "32000.00",
-    "proveedor": 4,
-    "fecha_ingreso": "2026-08-03",
-    "fecha_venta": null
-  }
-},
-{
-  "model": "inventario.unidad",
-  "pk": 11,
-  "fields": {
-    "creado_en": "2026-08-22T08:34:54.687Z",
-    "modificado_en": "2026-08-22T08:34:54.704Z",
-    "creado_por": [
-      "gerencia"
-    ],
-    "modificado_por": null,
-    "activo": true,
-    "notas": "",
-    "modelo": 12,
-    "numero_serie": "SEA-IBI-2021-001",
-    "matricula": "2345-EFG",
-    "color": "Azul Emoción",
-    "kilometros": 18000,
-    "estado": "VENDIDA",
-    "precio_costo": "9500.00",
-    "precio_venta": "13500.00",
-    "proveedor": 4,
-    "fecha_ingreso": "2026-08-09",
-    "fecha_venta": "2026-08-07"
-  }
-},
-{
-  "model": "inventario.unidad",
-  "pk": 12,
-  "fields": {
-    "creado_en": "2026-08-22T08:34:54.687Z",
-    "modificado_en": "2026-08-22T08:34:54.687Z",
-    "creado_por": [
-      "gerencia"
-    ],
-    "modificado_por": null,
-    "activo": true,
-    "notas": "",
-    "modelo": 13,
-    "numero_serie": "BMW-S3-2023-001",
-    "matricula": "6789-HIJ",
-    "color": "Blanco Alpino",
-    "kilometros": 0,
-    "estado": "NUEVA",
-    "precio_costo": "42000.00",
-    "precio_venta": "54900.00",
-    "proveedor": 5,
-    "fecha_ingreso": "2026-05-12",
-    "fecha_venta": null
-  }
-},
-{
-  "model": "inventario.unidad",
-  "pk": 13,
-  "fields": {
-    "creado_en": "2026-08-22T08:34:54.687Z",
-    "modificado_en": "2026-08-22T08:34:54.705Z",
-    "creado_por": [
-      "gerencia"
-    ],
-    "modificado_por": null,
-    "activo": true,
-    "notas": "",
-    "modelo": 14,
-    "numero_serie": "BMW-X3-2022-001",
-    "matricula": "0123-KLM",
-    "color": "Negro Zafiro",
-    "kilometros": 8000,
-    "estado": "VENDIDA",
-    "precio_costo": "38000.00",
-    "precio_venta": "49500.00",
-    "proveedor": 5,
-    "fecha_ingreso": "2026-07-10",
-    "fecha_venta": "2026-06-23"
-  }
-},
-{
-  "model": "inventario.unidad",
-  "pk": 14,
-  "fields": {
-    "creado_en": "2026-08-22T08:34:54.688Z",
-    "modificado_en": "2026-08-22T08:34:54.688Z",
-    "creado_por": [
-      "gerencia"
-    ],
-    "modificado_por": null,
-    "activo": true,
-    "notas": "",
-    "modelo": 1,
-    "numero_serie": "TOY-COR-2020-CON",
-    "matricula": "9999-CON",
-    "color": "Gris",
-    "kilometros": 45000,
-    "estado": "CONSIGNACION",
-    "precio_costo": "12000.00",
-    "precio_venta": "17500.00",
-    "proveedor": 1,
-    "fecha_ingreso": "2026-06-28",
-    "fecha_venta": null
   }
 },
 {
@@ -986,6 +306,25 @@
   }
 },
 {
+  "model": "ventas.cliente",
+  "pk": 11,
+  "fields": {
+    "creado_en": "2026-09-03T15:33:52.881Z",
+    "modificado_en": "2026-09-03T15:33:52.881Z",
+    "creado_por": null,
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "codigo": "CL0011",
+    "nombre": "Edgardo Luis",
+    "apellidos": "Burgos Salvatierra",
+    "dni_nie": "",
+    "telefono": "615213951",
+    "email": "burgosedgardo01@gmail.com",
+    "direccion": "Avenida Juan Carlos I - Nro. 62"
+  }
+},
+{
   "model": "ventas.ventaunidad",
   "pk": 1,
   "fields": {
@@ -1006,6 +345,7 @@
     "precio_acordado": "14900.00",
     "anticipo": "3000.00",
     "monto_financiado": "11900.00",
+    "tipo_financiacion": "CUOTAS",
     "estado_pago": "PARCIAL",
     "observaciones": ""
   }
@@ -1031,6 +371,7 @@
     "precio_acordado": "21500.00",
     "anticipo": "5000.00",
     "monto_financiado": "16500.00",
+    "tipo_financiacion": "CUOTAS",
     "estado_pago": "PARCIAL",
     "observaciones": ""
   }
@@ -1056,6 +397,7 @@
     "precio_acordado": "15900.00",
     "anticipo": "4000.00",
     "monto_financiado": "11900.00",
+    "tipo_financiacion": "CUOTAS",
     "estado_pago": "PARCIAL",
     "observaciones": ""
   }
@@ -1081,6 +423,7 @@
     "precio_acordado": "13500.00",
     "anticipo": "2500.00",
     "monto_financiado": "11000.00",
+    "tipo_financiacion": "CUOTAS",
     "estado_pago": "PARCIAL",
     "observaciones": ""
   }
@@ -1106,6 +449,7 @@
     "precio_acordado": "49500.00",
     "anticipo": "15000.00",
     "monto_financiado": "34500.00",
+    "tipo_financiacion": "CUOTAS",
     "estado_pago": "PARCIAL",
     "observaciones": ""
   }
@@ -1131,6 +475,7 @@
     "precio_acordado": "23900.00",
     "anticipo": "5000.00",
     "monto_financiado": "18900.00",
+    "tipo_financiacion": "CUOTAS",
     "estado_pago": "PARCIAL",
     "observaciones": ""
   }
@@ -1156,6 +501,7 @@
     "precio_acordado": "28500.00",
     "anticipo": "8000.00",
     "monto_financiado": "20500.00",
+    "tipo_financiacion": "BANCARIA",
     "estado_pago": "FINANCIADO",
     "observaciones": ""
   }
@@ -2186,7 +1532,7 @@
     "notas": "",
     "proveedor": 1,
     "unidad": 1,
-    "tipo_compra": "CONTADO",
+    "tipo_compra": "USADA",
     "fecha_compra": "2026-05-30",
     "precio_compra": "18500.00",
     "anticipo_pagado": "18500.00",
@@ -2208,7 +1554,7 @@
     "notas": "",
     "proveedor": 1,
     "unidad": 2,
-    "tipo_compra": "FINANCIADO",
+    "tipo_compra": "NUEVA",
     "fecha_compra": "2026-06-15",
     "precio_compra": "28000.00",
     "anticipo_pagado": "8000.00",
@@ -2230,7 +1576,7 @@
     "notas": "",
     "proveedor": 2,
     "unidad": 4,
-    "tipo_compra": "FINANCIADO",
+    "tipo_compra": "NUEVA",
     "fecha_compra": "2026-07-27",
     "precio_compra": "22000.00",
     "anticipo_pagado": "6000.00",
@@ -2252,7 +1598,7 @@
     "notas": "",
     "proveedor": 2,
     "unidad": 5,
-    "tipo_compra": "FINANCIADO",
+    "tipo_compra": "NUEVA",
     "fecha_compra": "2026-07-21",
     "precio_compra": "32000.00",
     "anticipo_pagado": "10000.00",
@@ -2274,7 +1620,7 @@
     "notas": "",
     "proveedor": 3,
     "unidad": 8,
-    "tipo_compra": "FINANCIADO",
+    "tipo_compra": "NUEVA",
     "fecha_compra": "2026-07-20",
     "precio_compra": "26500.00",
     "anticipo_pagado": "6500.00",
@@ -2296,7 +1642,7 @@
     "notas": "",
     "proveedor": 4,
     "unidad": 9,
-    "tipo_compra": "CONTADO",
+    "tipo_compra": "USADA",
     "fecha_compra": "2026-06-21",
     "precio_compra": "20000.00",
     "anticipo_pagado": "20000.00",
@@ -2318,7 +1664,7 @@
     "notas": "",
     "proveedor": 4,
     "unidad": 10,
-    "tipo_compra": "FINANCIADO",
+    "tipo_compra": "NUEVA",
     "fecha_compra": "2026-08-07",
     "precio_compra": "25000.00",
     "anticipo_pagado": "7000.00",
@@ -2340,7 +1686,7 @@
     "notas": "",
     "proveedor": 5,
     "unidad": 12,
-    "tipo_compra": "FINANCIADO",
+    "tipo_compra": "NUEVA",
     "fecha_compra": "2026-07-28",
     "precio_compra": "42000.00",
     "anticipo_pagado": "12000.00",
@@ -2630,26 +1976,6 @@
 },
 {
   "model": "compras.pagocompraunidad",
-  "pk": 15,
-  "fields": {
-    "creado_en": "2026-08-22T08:34:54.692Z",
-    "modificado_en": "2026-08-22T08:34:54.692Z",
-    "creado_por": [
-      "gerencia"
-    ],
-    "modificado_por": null,
-    "activo": true,
-    "notas": "",
-    "compra": 5,
-    "numero_cuota": 1,
-    "fecha_vencimiento": "2026-09-21",
-    "monto": "5000.00",
-    "fecha_pago": null,
-    "pagado": false
-  }
-},
-{
-  "model": "compras.pagocompraunidad",
   "pk": 16,
   "fields": {
     "creado_en": "2026-08-22T08:34:54.692Z",
@@ -2906,6 +2232,650 @@
     "monto": "5000.00",
     "fecha_pago": null,
     "pagado": false
+  }
+},
+{
+  "model": "inventario.marca",
+  "pk": 1,
+  "fields": {
+    "creado_en": "2026-08-22T08:34:54.671Z",
+    "modificado_en": "2026-08-22T08:34:54.671Z",
+    "creado_por": null,
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "nombre": "Toyota",
+    "pais_origen": "Japón"
+  }
+},
+{
+  "model": "inventario.marca",
+  "pk": 2,
+  "fields": {
+    "creado_en": "2026-08-22T08:34:54.673Z",
+    "modificado_en": "2026-08-22T08:34:54.673Z",
+    "creado_por": null,
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "nombre": "Volkswagen",
+    "pais_origen": "Alemania"
+  }
+},
+{
+  "model": "inventario.marca",
+  "pk": 3,
+  "fields": {
+    "creado_en": "2026-08-22T08:34:54.675Z",
+    "modificado_en": "2026-08-22T08:34:54.675Z",
+    "creado_por": null,
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "nombre": "Ford",
+    "pais_origen": "EEUU"
+  }
+},
+{
+  "model": "inventario.marca",
+  "pk": 4,
+  "fields": {
+    "creado_en": "2026-08-22T08:34:54.676Z",
+    "modificado_en": "2026-08-22T08:34:54.676Z",
+    "creado_por": null,
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "nombre": "Seat",
+    "pais_origen": "España"
+  }
+},
+{
+  "model": "inventario.marca",
+  "pk": 5,
+  "fields": {
+    "creado_en": "2026-08-22T08:34:54.677Z",
+    "modificado_en": "2026-08-22T08:34:54.677Z",
+    "creado_por": null,
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "nombre": "BMW",
+    "pais_origen": "Alemania"
+  }
+},
+{
+  "model": "inventario.modelo",
+  "pk": 1,
+  "fields": {
+    "creado_en": "2026-08-22T08:34:54.672Z",
+    "modificado_en": "2026-08-22T08:34:54.672Z",
+    "creado_por": null,
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "marca": 1,
+    "nombre": "Corolla",
+    "año": 2022,
+    "tipo": "SEDAN"
+  }
+},
+{
+  "model": "inventario.modelo",
+  "pk": 2,
+  "fields": {
+    "creado_en": "2026-08-22T08:34:54.673Z",
+    "modificado_en": "2026-08-22T08:34:54.673Z",
+    "creado_por": null,
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "marca": 1,
+    "nombre": "RAV4",
+    "año": 2023,
+    "tipo": "SUV"
+  }
+},
+{
+  "model": "inventario.modelo",
+  "pk": 3,
+  "fields": {
+    "creado_en": "2026-08-22T08:34:54.673Z",
+    "modificado_en": "2026-08-22T08:34:54.673Z",
+    "creado_por": null,
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "marca": 1,
+    "nombre": "Yaris",
+    "año": 2021,
+    "tipo": "HATCHBACK"
+  }
+},
+{
+  "model": "inventario.modelo",
+  "pk": 4,
+  "fields": {
+    "creado_en": "2026-08-22T08:34:54.674Z",
+    "modificado_en": "2026-08-22T08:34:54.674Z",
+    "creado_por": null,
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "marca": 2,
+    "nombre": "Golf",
+    "año": 2022,
+    "tipo": "HATCHBACK"
+  }
+},
+{
+  "model": "inventario.modelo",
+  "pk": 5,
+  "fields": {
+    "creado_en": "2026-08-22T08:34:54.674Z",
+    "modificado_en": "2026-08-22T08:34:54.674Z",
+    "creado_por": null,
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "marca": 2,
+    "nombre": "Tiguan",
+    "año": 2023,
+    "tipo": "SUV"
+  }
+},
+{
+  "model": "inventario.modelo",
+  "pk": 6,
+  "fields": {
+    "creado_en": "2026-08-22T08:34:54.675Z",
+    "modificado_en": "2026-08-22T08:34:54.675Z",
+    "creado_por": null,
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "marca": 2,
+    "nombre": "Passat",
+    "año": 2021,
+    "tipo": "SEDAN"
+  }
+},
+{
+  "model": "inventario.modelo",
+  "pk": 7,
+  "fields": {
+    "creado_en": "2026-08-22T08:34:54.675Z",
+    "modificado_en": "2026-08-22T08:34:54.675Z",
+    "creado_por": null,
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "marca": 3,
+    "nombre": "Focus",
+    "año": 2021,
+    "tipo": "HATCHBACK"
+  }
+},
+{
+  "model": "inventario.modelo",
+  "pk": 8,
+  "fields": {
+    "creado_en": "2026-08-22T08:34:54.676Z",
+    "modificado_en": "2026-08-22T08:34:54.676Z",
+    "creado_por": null,
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "marca": 3,
+    "nombre": "Kuga",
+    "año": 2022,
+    "tipo": "SUV"
+  }
+},
+{
+  "model": "inventario.modelo",
+  "pk": 9,
+  "fields": {
+    "creado_en": "2026-08-22T08:34:54.676Z",
+    "modificado_en": "2026-08-22T08:34:54.676Z",
+    "creado_por": null,
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "marca": 3,
+    "nombre": "Puma",
+    "año": 2023,
+    "tipo": "CROSSOVER"
+  }
+},
+{
+  "model": "inventario.modelo",
+  "pk": 10,
+  "fields": {
+    "creado_en": "2026-08-22T08:34:54.677Z",
+    "modificado_en": "2026-08-22T08:34:54.677Z",
+    "creado_por": null,
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "marca": 4,
+    "nombre": "León",
+    "año": 2022,
+    "tipo": "HATCHBACK"
+  }
+},
+{
+  "model": "inventario.modelo",
+  "pk": 11,
+  "fields": {
+    "creado_en": "2026-08-22T08:34:54.677Z",
+    "modificado_en": "2026-08-22T08:34:54.677Z",
+    "creado_por": null,
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "marca": 4,
+    "nombre": "Ateca",
+    "año": 2023,
+    "tipo": "SUV"
+  }
+},
+{
+  "model": "inventario.modelo",
+  "pk": 12,
+  "fields": {
+    "creado_en": "2026-08-22T08:34:54.677Z",
+    "modificado_en": "2026-08-22T08:34:54.677Z",
+    "creado_por": null,
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "marca": 4,
+    "nombre": "Ibiza",
+    "año": 2021,
+    "tipo": "HATCHBACK"
+  }
+},
+{
+  "model": "inventario.modelo",
+  "pk": 13,
+  "fields": {
+    "creado_en": "2026-08-22T08:34:54.678Z",
+    "modificado_en": "2026-08-22T08:34:54.678Z",
+    "creado_por": null,
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "marca": 5,
+    "nombre": "Serie 3",
+    "año": 2023,
+    "tipo": "SEDAN"
+  }
+},
+{
+  "model": "inventario.modelo",
+  "pk": 14,
+  "fields": {
+    "creado_en": "2026-08-22T08:34:54.678Z",
+    "modificado_en": "2026-08-22T08:34:54.678Z",
+    "creado_por": null,
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "marca": 5,
+    "nombre": "X3",
+    "año": 2022,
+    "tipo": "SUV"
+  }
+},
+{
+  "model": "inventario.unidad",
+  "pk": 1,
+  "fields": {
+    "creado_en": "2026-08-22T08:34:54.683Z",
+    "modificado_en": "2026-08-22T08:34:54.706Z",
+    "creado_por": [
+      "gerencia"
+    ],
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "modelo": 1,
+    "numero_serie": "TOY-COR-2022-001",
+    "matricula": "1234-ABC",
+    "color": "Blanco Perla",
+    "kilometros": 0,
+    "estado": "VENDIDA",
+    "precio_costo": "18500.00",
+    "precio_venta": "23900.00",
+    "proveedor": 1,
+    "fecha_ingreso": "2026-05-12",
+    "fecha_venta": "2026-08-17"
+  }
+},
+{
+  "model": "inventario.unidad",
+  "pk": 2,
+  "fields": {
+    "creado_en": "2026-08-22T08:34:54.683Z",
+    "modificado_en": "2026-08-22T08:34:54.683Z",
+    "creado_por": [
+      "gerencia"
+    ],
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "modelo": 2,
+    "numero_serie": "TOY-RAV-2023-001",
+    "matricula": "5678-DEF",
+    "color": "Gris Plata",
+    "kilometros": 0,
+    "estado": "NUEVA",
+    "precio_costo": "28000.00",
+    "precio_venta": "35500.00",
+    "proveedor": 1,
+    "fecha_ingreso": "2026-06-15",
+    "fecha_venta": null
+  }
+},
+{
+  "model": "inventario.unidad",
+  "pk": 3,
+  "fields": {
+    "creado_en": "2026-08-22T08:34:54.684Z",
+    "modificado_en": "2026-08-22T08:34:54.700Z",
+    "creado_por": [
+      "gerencia"
+    ],
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "modelo": 3,
+    "numero_serie": "TOY-YAR-2021-001",
+    "matricula": "9012-GHI",
+    "color": "Rojo Carmín",
+    "kilometros": 15000,
+    "estado": "VENDIDA",
+    "precio_costo": "10500.00",
+    "precio_venta": "14900.00",
+    "proveedor": 1,
+    "fecha_ingreso": "2026-06-13",
+    "fecha_venta": "2026-07-08"
+  }
+},
+{
+  "model": "inventario.unidad",
+  "pk": 4,
+  "fields": {
+    "creado_en": "2026-08-22T08:34:54.684Z",
+    "modificado_en": "2026-08-22T08:34:54.707Z",
+    "creado_por": [
+      "gerencia"
+    ],
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "modelo": 4,
+    "numero_serie": "VW-GOL-2022-001",
+    "matricula": "3456-JKL",
+    "color": "Negro Azabache",
+    "kilometros": 0,
+    "estado": "VENDIDA",
+    "precio_costo": "22000.00",
+    "precio_venta": "28500.00",
+    "proveedor": 2,
+    "fecha_ingreso": "2026-05-20",
+    "fecha_venta": "2026-08-20"
+  }
+},
+{
+  "model": "inventario.unidad",
+  "pk": 5,
+  "fields": {
+    "creado_en": "2026-08-22T08:34:54.684Z",
+    "modificado_en": "2026-08-22T08:34:54.684Z",
+    "creado_por": [
+      "gerencia"
+    ],
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "modelo": 5,
+    "numero_serie": "VW-TIG-2023-001",
+    "matricula": "7890-MNO",
+    "color": "Azul Atlántico",
+    "kilometros": 0,
+    "estado": "NUEVA",
+    "precio_costo": "32000.00",
+    "precio_venta": "41000.00",
+    "proveedor": 2,
+    "fecha_ingreso": "2026-06-16",
+    "fecha_venta": null
+  }
+},
+{
+  "model": "inventario.unidad",
+  "pk": 6,
+  "fields": {
+    "creado_en": "2026-08-22T08:34:54.685Z",
+    "modificado_en": "2026-08-22T08:34:54.702Z",
+    "creado_por": [
+      "gerencia"
+    ],
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "modelo": 6,
+    "numero_serie": "VW-PAS-2021-001",
+    "matricula": "2345-PQR",
+    "color": "Plata Reflex",
+    "kilometros": 28000,
+    "estado": "VENDIDA",
+    "precio_costo": "15000.00",
+    "precio_venta": "21500.00",
+    "proveedor": 2,
+    "fecha_ingreso": "2026-08-03",
+    "fecha_venta": "2026-07-23"
+  }
+},
+{
+  "model": "inventario.unidad",
+  "pk": 7,
+  "fields": {
+    "creado_en": "2026-08-22T08:34:54.685Z",
+    "modificado_en": "2026-08-22T08:34:54.703Z",
+    "creado_por": [
+      "gerencia"
+    ],
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "modelo": 7,
+    "numero_serie": "FOR-FOC-2021-001",
+    "matricula": "6789-STU",
+    "color": "Blanco",
+    "kilometros": 22000,
+    "estado": "VENDIDA",
+    "precio_costo": "11000.00",
+    "precio_venta": "15900.00",
+    "proveedor": 3,
+    "fecha_ingreso": "2026-04-30",
+    "fecha_venta": "2026-08-02"
+  }
+},
+{
+  "model": "inventario.unidad",
+  "pk": 8,
+  "fields": {
+    "creado_en": "2026-08-22T08:34:54.686Z",
+    "modificado_en": "2026-08-22T08:34:54.686Z",
+    "creado_por": [
+      "gerencia"
+    ],
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "modelo": 8,
+    "numero_serie": "FOR-KUG-2022-001",
+    "matricula": "0123-VWX",
+    "color": "Gris Magnetic",
+    "kilometros": 0,
+    "estado": "NUEVA",
+    "precio_costo": "26500.00",
+    "precio_venta": "33900.00",
+    "proveedor": 3,
+    "fecha_ingreso": "2026-08-07",
+    "fecha_venta": null
+  }
+},
+{
+  "model": "inventario.unidad",
+  "pk": 9,
+  "fields": {
+    "creado_en": "2026-08-22T08:34:54.686Z",
+    "modificado_en": "2026-08-22T08:34:54.686Z",
+    "creado_por": [
+      "gerencia"
+    ],
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "modelo": 10,
+    "numero_serie": "SEA-LEO-2022-001",
+    "matricula": "4567-YZA",
+    "color": "Naranja Desire",
+    "kilometros": 0,
+    "estado": "NUEVA",
+    "precio_costo": "20000.00",
+    "precio_venta": "26500.00",
+    "proveedor": 4,
+    "fecha_ingreso": "2026-07-31",
+    "fecha_venta": null
+  }
+},
+{
+  "model": "inventario.unidad",
+  "pk": 10,
+  "fields": {
+    "creado_en": "2026-08-22T08:34:54.686Z",
+    "modificado_en": "2026-08-22T08:34:54.686Z",
+    "creado_por": [
+      "gerencia"
+    ],
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "modelo": 11,
+    "numero_serie": "SEA-ATE-2023-001",
+    "matricula": "8901-BCD",
+    "color": "Blanco Nevada",
+    "kilometros": 0,
+    "estado": "NUEVA",
+    "precio_costo": "25000.00",
+    "precio_venta": "32000.00",
+    "proveedor": 4,
+    "fecha_ingreso": "2026-08-03",
+    "fecha_venta": null
+  }
+},
+{
+  "model": "inventario.unidad",
+  "pk": 11,
+  "fields": {
+    "creado_en": "2026-08-22T08:34:54.687Z",
+    "modificado_en": "2026-08-22T08:34:54.704Z",
+    "creado_por": [
+      "gerencia"
+    ],
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "modelo": 12,
+    "numero_serie": "SEA-IBI-2021-001",
+    "matricula": "2345-EFG",
+    "color": "Azul Emoción",
+    "kilometros": 18000,
+    "estado": "VENDIDA",
+    "precio_costo": "9500.00",
+    "precio_venta": "13500.00",
+    "proveedor": 4,
+    "fecha_ingreso": "2026-08-09",
+    "fecha_venta": "2026-08-07"
+  }
+},
+{
+  "model": "inventario.unidad",
+  "pk": 12,
+  "fields": {
+    "creado_en": "2026-08-22T08:34:54.687Z",
+    "modificado_en": "2026-08-22T08:34:54.687Z",
+    "creado_por": [
+      "gerencia"
+    ],
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "modelo": 13,
+    "numero_serie": "BMW-S3-2023-001",
+    "matricula": "6789-HIJ",
+    "color": "Blanco Alpino",
+    "kilometros": 0,
+    "estado": "NUEVA",
+    "precio_costo": "42000.00",
+    "precio_venta": "54900.00",
+    "proveedor": 5,
+    "fecha_ingreso": "2026-05-12",
+    "fecha_venta": null
+  }
+},
+{
+  "model": "inventario.unidad",
+  "pk": 13,
+  "fields": {
+    "creado_en": "2026-08-22T08:34:54.687Z",
+    "modificado_en": "2026-08-22T08:34:54.705Z",
+    "creado_por": [
+      "gerencia"
+    ],
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "modelo": 14,
+    "numero_serie": "BMW-X3-2022-001",
+    "matricula": "0123-KLM",
+    "color": "Negro Zafiro",
+    "kilometros": 8000,
+    "estado": "VENDIDA",
+    "precio_costo": "38000.00",
+    "precio_venta": "49500.00",
+    "proveedor": 5,
+    "fecha_ingreso": "2026-07-10",
+    "fecha_venta": "2026-06-23"
+  }
+},
+{
+  "model": "inventario.unidad",
+  "pk": 14,
+  "fields": {
+    "creado_en": "2026-08-22T08:34:54.688Z",
+    "modificado_en": "2026-08-22T08:34:54.688Z",
+    "creado_por": [
+      "gerencia"
+    ],
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "modelo": 1,
+    "numero_serie": "TOY-COR-2020-CON",
+    "matricula": "9999-CON",
+    "color": "Gris",
+    "kilometros": 45000,
+    "estado": "CONSIGNACION",
+    "precio_costo": "12000.00",
+    "precio_venta": "17500.00",
+    "proveedor": 1,
+    "fecha_ingreso": "2026-06-28",
+    "fecha_venta": null
   }
 },
 {
@@ -3524,6 +3494,34 @@
     "fecha_vencimiento": "2026-10-16",
     "estado": "CARTERA",
     "referencia_venta_id": null
+  }
+},
+{
+  "model": "financiero.proyeccionfinanciera",
+  "pk": 1,
+  "fields": {
+    "creado_en": "2026-09-04T08:35:45.350Z",
+    "modificado_en": "2026-09-04T08:35:45.350Z",
+    "creado_por": [
+      "gerencia"
+    ],
+    "modificado_por": null,
+    "activo": true,
+    "notas": "",
+    "fecha_calculo": "2026-09-04T08:35:45.350Z",
+    "fecha_horizonte": "2026-10-04",
+    "saldo_caja_actual": "75006.67",
+    "pagares_en_cartera": "67900.00",
+    "saldo_bancos": "50470.00",
+    "cobros_previstos": "42875.00",
+    "pagos_proveedores_unidades": "22166.67",
+    "pagos_proveedores_insumos": "0.00",
+    "sueldos_previstos": "23700.00",
+    "servicios_previstos": "1640.00",
+    "total_activos": "236251.67",
+    "total_pasivos": "47506.67",
+    "posicion_neta": "188745.00",
+    "alerta_activa": false
   }
 },
 {
@@ -4591,461 +4589,6 @@
     "nivel_riesgo": "ALTO",
     "acciones_requeridas": "1. Revocar acceso financiero de ventas01. 2. Implementar alerta por horario. 3. Revisar logs de los últimos 90 días.",
     "fecha_seguimiento": "2026-09-04"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 1,
-  "fields": {
-    "user": [
-      "gerencia"
-    ],
-    "jti": "fc26c845c94249c28b30b2d624a64be8",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4NzkzNzY5MywiaWF0IjoxNzg3MzMyODkzLCJqdGkiOiJmYzI2Yzg0NWM5NDI0OWMyOGIzMGIyZDYyNGE2NGJlOCIsInVzZXJfaWQiOiIxIn0.GVEW-xSGs5qUP5P55S1F2uRRuU5uVjYynx4yH6HOHps",
-    "created_at": "2026-08-21T17:21:33.067Z",
-    "expires_at": "2026-08-28T17:21:33Z"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 2,
-  "fields": {
-    "user": [
-      "gerencia"
-    ],
-    "jti": "86206f69fc6a4958b8bfe6ba0c195838",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4NzkzNzczMSwiaWF0IjoxNzg3MzMyOTMxLCJqdGkiOiI4NjIwNmY2OWZjNmE0OTU4YjhiZmU2YmEwYzE5NTgzOCIsInVzZXJfaWQiOiIxIn0.9bjMhCvwh82L3PBGJPZSJwfN1HkxUzQdwosAbSG2tG0",
-    "created_at": "2026-08-21T17:22:11.968Z",
-    "expires_at": "2026-08-28T17:22:11Z"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 3,
-  "fields": {
-    "user": [
-      "gerencia"
-    ],
-    "jti": "47d51102bebf4aad9126a4bfe2fb545f",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4Nzk5MDk4MCwiaWF0IjoxNzg3Mzg2MTgwLCJqdGkiOiI0N2Q1MTEwMmJlYmY0YWFkOTEyNmE0YmZlMmZiNTQ1ZiIsInVzZXJfaWQiOiIxIn0.RPlhTV8WbRnX-fthJCbUcNpps3wCze-ttXgaaPtH4d4",
-    "created_at": "2026-08-22T08:09:40.209Z",
-    "expires_at": "2026-08-29T08:09:40Z"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 4,
-  "fields": {
-    "user": [
-      "gerencia"
-    ],
-    "jti": "bc880ac0a33d46a080cfdfd054488100",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4Nzk5MTI5OCwiaWF0IjoxNzg3Mzg2NDk4LCJqdGkiOiJiYzg4MGFjMGEzM2Q0NmEwODBjZmRmZDA1NDQ4ODEwMCIsInVzZXJfaWQiOiIxIn0.9wlHbIfyD6OMHDTn_WYm6y1G5AE8Xn5_7LqJ8pOO_OU",
-    "created_at": "2026-08-22T08:14:58.005Z",
-    "expires_at": "2026-08-29T08:14:58Z"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 5,
-  "fields": {
-    "user": [
-      "gerencia"
-    ],
-    "jti": "302fd37e764a48b49632d46ff7b89d75",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4Nzk5MjA4NSwiaWF0IjoxNzg3Mzg3Mjg1LCJqdGkiOiIzMDJmZDM3ZTc2NGE0OGI0OTYzMmQ0NmZmN2I4OWQ3NSIsInVzZXJfaWQiOiIxIn0.IDGMfcUy01XMZHqK8-dq5vRM-s8W1C6Jt1MzhCAmTpU",
-    "created_at": "2026-08-22T08:28:05.575Z",
-    "expires_at": "2026-08-29T08:28:05Z"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 6,
-  "fields": {
-    "user": [
-      "gerencia"
-    ],
-    "jti": "066a08a172194470babcd7fc1afc43ac",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4Nzk5MjUxOSwiaWF0IjoxNzg3Mzg3NzE5LCJqdGkiOiIwNjZhMDhhMTcyMTk0NDcwYmFiY2Q3ZmMxYWZjNDNhYyIsInVzZXJfaWQiOiIxIn0.z5qrA_LCXwJF8pbNU5MJ4WnHkiihaE3XBiPKJnSKG4k",
-    "created_at": "2026-08-22T08:35:19.466Z",
-    "expires_at": "2026-08-29T08:35:19Z"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 7,
-  "fields": {
-    "user": [
-      "gerencia"
-    ],
-    "jti": "2811933b7cd046ae9a92b51591e07a45",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4ODAxNDQ3NSwiaWF0IjoxNzg3NDA5Njc1LCJqdGkiOiIyODExOTMzYjdjZDA0NmFlOWE5MmI1MTU5MWUwN2E0NSIsInVzZXJfaWQiOiIxIiwidXNlcm5hbWUiOiJnZXJlbmNpYSIsIm5vbWJyZV9jb21wbGV0byI6IkVkZ2FyZG8gQnVyZ29zIiwicm9sIjoiR0VSRU5DSUEiLCJyb2xfZGlzcGxheSI6IkdlcmVuY2lhIEdlbmVyYWwiLCJlc19nZXJlbmNpYSI6dHJ1ZSwiZXNfYXVkaXRvciI6ZmFsc2UsInB1ZWRlX3Zlcl9maW5hbmNpZXJvIjp0cnVlLCJwdWVkZV92ZXJfdG9kbyI6dHJ1ZX0.LrCObeb65yA39fCZXA1qR1kqg76e34IWDpnqm4mEDhE",
-    "created_at": "2026-08-22T14:41:15.990Z",
-    "expires_at": "2026-08-29T14:41:15Z"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 8,
-  "fields": {
-    "user": [
-      "gerencia"
-    ],
-    "jti": "192238150f6945ae9e69fc4a5e664157",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4ODAxNDQ3NSwiaWF0IjoxNzg3NDA5Njc1LCJqdGkiOiIxOTIyMzgxNTBmNjk0NWFlOWU2OWZjNGE1ZTY2NDE1NyIsInVzZXJfaWQiOiIxIiwidXNlcm5hbWUiOiJnZXJlbmNpYSIsIm5vbWJyZV9jb21wbGV0byI6IkVkZ2FyZG8gQnVyZ29zIiwicm9sIjoiR0VSRU5DSUEiLCJyb2xfZGlzcGxheSI6IkdlcmVuY2lhIEdlbmVyYWwiLCJlc19nZXJlbmNpYSI6dHJ1ZSwiZXNfYXVkaXRvciI6ZmFsc2UsInB1ZWRlX3Zlcl9maW5hbmNpZXJvIjp0cnVlLCJwdWVkZV92ZXJfdG9kbyI6dHJ1ZX0.1_XDCeq3Tu4f2un1Uu8ynQONNhvYLfgrWGfN9T2MyoE",
-    "created_at": "2026-08-22T14:41:15.993Z",
-    "expires_at": "2026-08-29T14:41:15Z"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 9,
-  "fields": {
-    "user": [
-      "gerencia"
-    ],
-    "jti": "8158dd33bc864202832bb3dc2ff660a2",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4ODQxMzgxOCwiaWF0IjoxNzg3ODA5MDE4LCJqdGkiOiI4MTU4ZGQzM2JjODY0MjAyODMyYmIzZGMyZmY2NjBhMiIsInVzZXJfaWQiOiIxIn0.q4yb0FniA_W_clbVXbdJmXr8tN2AGssUrHCatqiCT1Q",
-    "created_at": "2026-08-27T05:36:58.821Z",
-    "expires_at": "2026-09-03T05:36:58Z"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 10,
-  "fields": {
-    "user": [
-      "gerencia"
-    ],
-    "jti": "fdfcefee0bc94d4c9179bd7886a946aa",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4ODQxNDkwNiwiaWF0IjoxNzg3ODEwMTA2LCJqdGkiOiJmZGZjZWZlZTBiYzk0ZDRjOTE3OWJkNzg4NmE5NDZhYSIsInVzZXJfaWQiOiIxIn0.DUIgmLgd0EHb0LeyfXjdP4EH7LZUv8f9UbUINEfMJUo",
-    "created_at": "2026-08-27T05:55:06.099Z",
-    "expires_at": "2026-09-03T05:55:06Z"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 11,
-  "fields": {
-    "user": [
-      "gerencia"
-    ],
-    "jti": "e7d3be881d4f46f897b1a2bf700e4b9e",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4ODUwNDk4MiwiaWF0IjoxNzg3OTAwMTgyLCJqdGkiOiJlN2QzYmU4ODFkNGY0NmY4OTdiMWEyYmY3MDBlNGI5ZSIsInVzZXJfaWQiOiIxIiwidXNlcm5hbWUiOiJnZXJlbmNpYSIsIm5vbWJyZV9jb21wbGV0byI6IkVkZ2FyZG8gQnVyZ29zIiwicm9sIjoiR0VSRU5DSUEiLCJyb2xfZGlzcGxheSI6IkdlcmVuY2lhIEdlbmVyYWwiLCJlc19nZXJlbmNpYSI6dHJ1ZSwiZXNfYXVkaXRvciI6ZmFsc2UsInB1ZWRlX3Zlcl9maW5hbmNpZXJvIjp0cnVlLCJwdWVkZV92ZXJfdG9kbyI6dHJ1ZX0.Fo_8o3m7UTat8ZbrjWcgZzSeRICspDEoY0ywuCtsloQ",
-    "created_at": "2026-08-28T06:56:22.545Z",
-    "expires_at": "2026-09-04T06:56:22Z"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 12,
-  "fields": {
-    "user": [
-      "gerencia"
-    ],
-    "jti": "ae45abbddff44b9abbfca85f33061405",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4ODUwNDk4OCwiaWF0IjoxNzg3OTAwMTg4LCJqdGkiOiJhZTQ1YWJiZGRmZjQ0YjlhYmJmY2E4NWYzMzA2MTQwNSIsInVzZXJfaWQiOiIxIn0.t5so0AwYAZTuPzRVNa7WusddYgs1fC0LyF9XKR_grHY",
-    "created_at": "2026-08-28T06:56:28.320Z",
-    "expires_at": "2026-09-04T06:56:28Z"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 13,
-  "fields": {
-    "user": [
-      "gerencia"
-    ],
-    "jti": "d738be412ab841d89c2fbae23ed07f22",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4ODUwNDk5OCwiaWF0IjoxNzg3OTAwMTk4LCJqdGkiOiJkNzM4YmU0MTJhYjg0MWQ4OWMyZmJhZTIzZWQwN2YyMiIsInVzZXJfaWQiOiIxIn0.D5vvfrLd5lVualDZo0r6fpQfGAGObfGmrC7kqXHfZFA",
-    "created_at": "2026-08-28T06:56:38.169Z",
-    "expires_at": "2026-09-04T06:56:38Z"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 14,
-  "fields": {
-    "user": [
-      "gerencia"
-    ],
-    "jti": "b9635c9c7c6841a3899a1d5fbca57f1b",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4ODUwNTI3NywiaWF0IjoxNzg3OTAwNDc3LCJqdGkiOiJiOTYzNWM5YzdjNjg0MWEzODk5YTFkNWZiY2E1N2YxYiIsInVzZXJfaWQiOiIxIn0.4hc9lcDeO3LjKPafqSqoBC1g9cRbJ6GZQoOzGgi46aI",
-    "created_at": "2026-08-28T07:01:17.384Z",
-    "expires_at": "2026-09-04T07:01:17Z"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 15,
-  "fields": {
-    "user": [
-      "gerencia"
-    ],
-    "jti": "94f853861d6344e7acb7c50b82829c41",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4ODUwNTI4NywiaWF0IjoxNzg3OTAwNDg3LCJqdGkiOiI5NGY4NTM4NjFkNjM0NGU3YWNiN2M1MGI4MjgyOWM0MSIsInVzZXJfaWQiOiIxIn0.bds4tOeA-DjF_d2Ek4uZ0csPutXhNFg49oLRxRkAY_A",
-    "created_at": "2026-08-28T07:01:27.779Z",
-    "expires_at": "2026-09-04T07:01:27Z"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 16,
-  "fields": {
-    "user": [
-      "gerencia"
-    ],
-    "jti": "c66122608758425ebdb560b26ee16c50",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4ODUwNTQwNCwiaWF0IjoxNzg3OTAwNjA0LCJqdGkiOiJjNjYxMjI2MDg3NTg0MjVlYmRiNTYwYjI2ZWUxNmM1MCIsInVzZXJfaWQiOiIxIn0.zp15lKI77iVQ0RmXEKQAoj8bqpULRlwltbCrjFUXGIQ",
-    "created_at": "2026-08-28T07:03:24.182Z",
-    "expires_at": "2026-09-04T07:03:24Z"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 17,
-  "fields": {
-    "user": [
-      "gerencia"
-    ],
-    "jti": "f75acfbf16784d109b5eb1f076ee2a15",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4ODUwNTQxNCwiaWF0IjoxNzg3OTAwNjE0LCJqdGkiOiJmNzVhY2ZiZjE2Nzg0ZDEwOWI1ZWIxZjA3NmVlMmExNSIsInVzZXJfaWQiOiIxIn0.p1x03vBEXLAH16EKlTH4qeZK26s4Lz3JHh9IaZ1FPTY",
-    "created_at": "2026-08-28T07:03:34.770Z",
-    "expires_at": "2026-09-04T07:03:34Z"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 18,
-  "fields": {
-    "user": [
-      "gerencia"
-    ],
-    "jti": "82aa7bc068444c6c8031a9e7c3a7c740",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4ODUwNjA3MiwiaWF0IjoxNzg3OTAxMjcyLCJqdGkiOiI4MmFhN2JjMDY4NDQ0YzZjODAzMWE5ZTdjM2E3Yzc0MCIsInVzZXJfaWQiOiIxIn0.vPGDgmirvXWpRYyHVPgsjerhSry40B6pPpv74I6gW8w",
-    "created_at": "2026-08-28T07:14:32.684Z",
-    "expires_at": "2026-09-04T07:14:32Z"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 19,
-  "fields": {
-    "user": [
-      "auditoria"
-    ],
-    "jti": "b33c05edc5e04f71b38cbba7212ef5b7",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4ODUwODIyNywiaWF0IjoxNzg3OTAzNDI3LCJqdGkiOiJiMzNjMDVlZGM1ZTA0ZjcxYjM4Y2JiYTcyMTJlZjViNyIsInVzZXJfaWQiOiIyIn0.RclstEVhvwyGpvn34UMu0MUfz2HygYVwjOqLS0EYSc4",
-    "created_at": "2026-08-28T07:50:27.141Z",
-    "expires_at": "2026-09-04T07:50:27Z"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 20,
-  "fields": {
-    "user": [
-      "auditoria"
-    ],
-    "jti": "eb17718df3604797be0f0d8b705fa0e2",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4ODUwODI0MywiaWF0IjoxNzg3OTAzNDQzLCJqdGkiOiJlYjE3NzE4ZGYzNjA0Nzk3YmUwZjBkOGI3MDVmYTBlMiIsInVzZXJfaWQiOiIyIn0.WyOQC3tvBiKnWOi0cBx3kTNyhu_hfz-Yk2XiIsC2kfs",
-    "created_at": "2026-08-28T07:50:43.522Z",
-    "expires_at": "2026-09-04T07:50:43Z"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 21,
-  "fields": {
-    "user": [
-      "gerencia"
-    ],
-    "jti": "4d93ede75155472e8ed906eb3d53fd6b",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4ODUwODI0MywiaWF0IjoxNzg3OTAzNDQzLCJqdGkiOiI0ZDkzZWRlNzUxNTU0NzJlOGVkOTA2ZWIzZDUzZmQ2YiIsInVzZXJfaWQiOiIxIn0.hFdb_FEGZEIxB4fgqeoCwv_tZzSArce1CW3Lq2q9EqE",
-    "created_at": "2026-08-28T07:50:43.701Z",
-    "expires_at": "2026-09-04T07:50:43Z"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 22,
-  "fields": {
-    "user": [
-      "gerencia"
-    ],
-    "jti": "5b674a0e02d744efa0425e6ea5f3aa5b",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4ODUwOTI4OSwiaWF0IjoxNzg3OTA0NDg5LCJqdGkiOiI1YjY3NGEwZTAyZDc0NGVmYTA0MjVlNmVhNWYzYWE1YiIsInVzZXJfaWQiOiIxIiwidXNlcm5hbWUiOiJnZXJlbmNpYSIsIm5vbWJyZV9jb21wbGV0byI6IkVkZ2FyZG8gQnVyZ29zIiwicm9sIjoiR0VSRU5DSUEiLCJyb2xfZGlzcGxheSI6IkdlcmVuY2lhIEdlbmVyYWwiLCJlc19nZXJlbmNpYSI6dHJ1ZSwiZXNfYXVkaXRvciI6ZmFsc2UsInB1ZWRlX3Zlcl9maW5hbmNpZXJvIjp0cnVlLCJwdWVkZV92ZXJfdG9kbyI6dHJ1ZX0.oS_LJ4cL2Auo5uqYlOIUh0QPtWPZIbfO6Ki4bTMfkR4",
-    "created_at": "2026-08-28T08:08:09.280Z",
-    "expires_at": "2026-09-04T08:08:09Z"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 23,
-  "fields": {
-    "user": [
-      "gerencia"
-    ],
-    "jti": "9a487453391e4443a1cffad897906a14",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4ODU5NTQ1NywiaWF0IjoxNzg3OTkwNjU3LCJqdGkiOiI5YTQ4NzQ1MzM5MWU0NDQzYTFjZmZhZDg5NzkwNmExNCIsInVzZXJfaWQiOiIxIn0.hLPhaH6EpmoZOiEdbaSf9zRE3G3e8uIiNQGznNniJTI",
-    "created_at": "2026-08-29T08:04:17.250Z",
-    "expires_at": "2026-09-05T08:04:17Z"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 24,
-  "fields": {
-    "user": [
-      "gerencia"
-    ],
-    "jti": "84941ad24a1a48bdaa1fd92d32ed02fe",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4ODU5NTU3MywiaWF0IjoxNzg3OTkwNzczLCJqdGkiOiI4NDk0MWFkMjRhMWE0OGJkYWExZmQ5MmQzMmVkMDJmZSIsInVzZXJfaWQiOiIxIn0.2QXJ0rNgPQ_sV4135O5k-NA53x0pObcm7BRIKsFf6H4",
-    "created_at": "2026-08-29T08:06:13.270Z",
-    "expires_at": "2026-09-05T08:06:13Z"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 25,
-  "fields": {
-    "user": [
-      "gerencia"
-    ],
-    "jti": "da00541aa1b842819dfec3e94bd0e9e9",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4ODU5NTU4NywiaWF0IjoxNzg3OTkwNzg3LCJqdGkiOiJkYTAwNTQxYWExYjg0MjgxOWRmZWMzZTk0YmQwZTllOSIsInVzZXJfaWQiOiIxIn0.Zbbd_MM5dvYqIHoiKOZjnmtEk1F24HymH2AQD3uZQOw",
-    "created_at": "2026-08-29T08:06:27.456Z",
-    "expires_at": "2026-09-05T08:06:27Z"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 26,
-  "fields": {
-    "user": [
-      "gerencia"
-    ],
-    "jti": "3de25aa08d8c499bb8c549842bca8fca",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4ODU5NjExMywiaWF0IjoxNzg3OTkxMzEzLCJqdGkiOiIzZGUyNWFhMDhkOGM0OTliYjhjNTQ5ODQyYmNhOGZjYSIsInVzZXJfaWQiOiIxIn0.m2wraWzdsvS86bGsL5bVCY0NMFgtvTg4jlBCbhl6Nm0",
-    "created_at": "2026-08-29T08:15:13.529Z",
-    "expires_at": "2026-09-05T08:15:13Z"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 27,
-  "fields": {
-    "user": [
-      "gerencia"
-    ],
-    "jti": "5878240bc1da4aae84b472534eaf4c6a",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4ODU5NjIxNCwiaWF0IjoxNzg3OTkxNDE0LCJqdGkiOiI1ODc4MjQwYmMxZGE0YWFlODRiNDcyNTM0ZWFmNGM2YSIsInVzZXJfaWQiOiIxIn0.FXxi8p1GAOwIVlN-jMBGYMABV0jtaLMq86QQeAuBmj4",
-    "created_at": "2026-08-29T08:16:54.020Z",
-    "expires_at": "2026-09-05T08:16:54Z"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 28,
-  "fields": {
-    "user": [
-      "gerencia"
-    ],
-    "jti": "a996f119b7c64bc58cb5f84a9f79aa6a",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4ODU5NjIyMiwiaWF0IjoxNzg3OTkxNDIyLCJqdGkiOiJhOTk2ZjExOWI3YzY0YmM1OGNiNWY4NGE5Zjc5YWE2YSIsInVzZXJfaWQiOiIxIn0.0XBvVMUQ3eq3vQnSvKLpEtMgxZ2Blg1Xe_trHWVQ8vU",
-    "created_at": "2026-08-29T08:17:02.686Z",
-    "expires_at": "2026-09-05T08:17:02Z"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 29,
-  "fields": {
-    "user": [
-      "gerencia"
-    ],
-    "jti": "58695e46a8504c879fdffb4fad496cac",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4ODU5NjIzMSwiaWF0IjoxNzg3OTkxNDMxLCJqdGkiOiI1ODY5NWU0NmE4NTA0Yzg3OWZkZmZiNGZhZDQ5NmNhYyIsInVzZXJfaWQiOiIxIn0.lUlUb3CUNijnEu4k4rAlVZ7GWMRFVFc8X4HVehkTgcc",
-    "created_at": "2026-08-29T08:17:11.951Z",
-    "expires_at": "2026-09-05T08:17:11Z"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 30,
-  "fields": {
-    "user": [
-      "gerencia"
-    ],
-    "jti": "19d9a69e43f44aadb6d30cdcbbf93736",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4ODU5NjI5OCwiaWF0IjoxNzg3OTkxNDk4LCJqdGkiOiIxOWQ5YTY5ZTQzZjQ0YWFkYjZkMzBjZGNiYmY5MzczNiIsInVzZXJfaWQiOiIxIn0.aYQc-UvWg207P0ZglWKl9lfQbiwJWMJX-HvKoFa4dFs",
-    "created_at": "2026-08-29T08:18:18.926Z",
-    "expires_at": "2026-09-05T08:18:18Z"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 31,
-  "fields": {
-    "user": [
-      "gerencia"
-    ],
-    "jti": "9a2e426e397c4689a484a7aa31a3d353",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4ODU5NjUxOCwiaWF0IjoxNzg3OTkxNzE4LCJqdGkiOiI5YTJlNDI2ZTM5N2M0Njg5YTQ4NGE3YWEzMWEzZDM1MyIsInVzZXJfaWQiOiIxIn0.vFMVqZwut5kz1PRNAeBvEywb2mu6byyyvKL_8ZPeMeE",
-    "created_at": "2026-08-29T08:21:58.608Z",
-    "expires_at": "2026-09-05T08:21:58Z"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 32,
-  "fields": {
-    "user": [
-      "gerencia"
-    ],
-    "jti": "9b907912583e4047a36dd4c0e417851b",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4OTA0ODE4NiwiaWF0IjoxNzg4NDQzMzg2LCJqdGkiOiI5YjkwNzkxMjU4M2U0MDQ3YTM2ZGQ0YzBlNDE3ODUxYiIsInVzZXJfaWQiOiIxIn0.zfWy0w9KmnGZjIpqvCDQNqz2FJk78xnyIDdc_O_Ycmo",
-    "created_at": "2026-09-03T13:49:46.925Z",
-    "expires_at": "2026-09-10T13:49:46Z"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 33,
-  "fields": {
-    "user": [
-      "gerencia"
-    ],
-    "jti": "906b0259abe24c80bff2dd8b6f51437f",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4OTA0ODIwMSwiaWF0IjoxNzg4NDQzNDAxLCJqdGkiOiI5MDZiMDI1OWFiZTI0YzgwYmZmMmRkOGI2ZjUxNDM3ZiIsInVzZXJfaWQiOiIxIn0.bkjeIIBCM8OJakq-5AVI1OZfXxxPBhSdBroMFg8B1Ck",
-    "created_at": "2026-09-03T13:50:01.675Z",
-    "expires_at": "2026-09-10T13:50:01Z"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 34,
-  "fields": {
-    "user": [
-      "gerencia"
-    ],
-    "jti": "3e933f938dd444fd85c2e6c6802c9335",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4OTA0ODIyMywiaWF0IjoxNzg4NDQzNDIzLCJqdGkiOiIzZTkzM2Y5MzhkZDQ0NGZkODVjMmU2YzY4MDJjOTMzNSIsInVzZXJfaWQiOiIxIiwidXNlcm5hbWUiOiJnZXJlbmNpYSIsIm5vbWJyZV9jb21wbGV0byI6IkVkZ2FyZG8gQnVyZ29zIiwicm9sIjoiR0VSRU5DSUEiLCJyb2xfZGlzcGxheSI6IkdlcmVuY2lhIEdlbmVyYWwiLCJlc19nZXJlbmNpYSI6dHJ1ZSwiZXNfYXVkaXRvciI6ZmFsc2UsInB1ZWRlX3Zlcl9maW5hbmNpZXJvIjp0cnVlLCJwdWVkZV92ZXJfdG9kbyI6dHJ1ZX0.GXkCXgyCSOFqFOzmbO4rIcMH38C5ICidkmPGmZd-9NI",
-    "created_at": "2026-09-03T13:50:23.727Z",
-    "expires_at": "2026-09-10T13:50:23Z"
-  }
-},
-{
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 35,
-  "fields": {
-    "user": [
-      "gerencia"
-    ],
-    "jti": "3f16f1fdb14d4ba8aa95eaa80ca3f29c",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4OTA0ODIyOSwiaWF0IjoxNzg4NDQzNDI5LCJqdGkiOiIzZjE2ZjFmZGIxNGQ0YmE4YWE5NWVhYTgwY2EzZjI5YyIsInVzZXJfaWQiOiIxIn0.xLigd5gg-xb1ENVFjhVI_q_iS2UXtsS0HuoZxrJHliY",
-    "created_at": "2026-09-03T13:50:29.078Z",
-    "expires_at": "2026-09-10T13:50:29Z"
   }
 }
 ]

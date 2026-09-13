@@ -31,6 +31,7 @@ class VentaUnidadSerializer(serializers.ModelSerializer):
     unidad_display = serializers.CharField(source='unidad.__str__', read_only=True)
     vendedor_nombre = serializers.CharField(source='vendedor.get_full_name', read_only=True)
     estado_pago_display = serializers.CharField(source='get_estado_pago_display', read_only=True)
+    tipo_financiacion_display = serializers.CharField(source='get_tipo_financiacion_display', read_only=True)
     saldo_pendiente = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
     pagos = PagoVentaSerializer(many=True, read_only=True)
 
@@ -40,6 +41,7 @@ class VentaUnidadSerializer(serializers.ModelSerializer):
             'id', 'cliente', 'cliente_nombre', 'unidad', 'unidad_display',
             'vendedor', 'vendedor_nombre', 'fecha_venta',
             'precio_acordado', 'anticipo', 'monto_financiado',
+            'tipo_financiacion', 'tipo_financiacion_display',
             'estado_pago', 'estado_pago_display', 'saldo_pendiente',
             'observaciones', 'pagos', 'creado_en',
         ]
@@ -54,7 +56,7 @@ class VentaUnidadCreateSerializer(serializers.ModelSerializer):
         fields = [
             'cliente', 'unidad', 'vendedor', 'fecha_venta',
             'precio_acordado', 'anticipo', 'monto_financiado',
-            'estado_pago', 'observaciones', 'cuotas',
+            'tipo_financiacion', 'estado_pago', 'observaciones', 'cuotas',
         ]
 
     def create(self, validated_data):

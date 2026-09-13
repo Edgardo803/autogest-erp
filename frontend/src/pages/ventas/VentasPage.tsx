@@ -21,6 +21,17 @@ function EstadoBadge({ estado }: { estado: string }) {
   return <span className={`badge ${mapa[estado] || 'badge-muted'}`}>{estado}</span>
 }
 
+function TipoFinBadge({ tipo }: { tipo: string }) {
+  const mapa: Record<string, { cls: string; label: string }> = {
+    CONTADO:  { cls: 'badge-success', label: '💵 Contado' },
+    CUOTAS:   { cls: 'badge-info',    label: '📅 Cuotas cliente' },
+    BANCARIA: { cls: 'badge-primary', label: '🏦 Financiación bancaria' },
+    PROPIA:   { cls: 'badge-warning', label: '🤝 Financiación propia' },
+  }
+  const { cls, label } = mapa[tipo] || { cls: 'badge-muted', label: tipo }
+  return <span className={`badge ${cls}`}>{label}</span>
+}
+
 // ── Panel lateral: Ficha de cliente ──────────────────────────────────────────
 function FichaCliente({ cliente, ventas, servicios, onClose }: {
   cliente: any
@@ -127,6 +138,9 @@ function FichaCliente({ cliente, ventas, servicios, onClose }: {
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.4rem' }}>
                     <span style={{ fontSize: '0.875rem', fontWeight: 600 }}>{v.unidad_display}</span>
                     <EstadoBadge estado={v.estado_pago} />
+                  </div>
+                  <div style={{ marginBottom: '0.4rem' }}>
+                    <TipoFinBadge tipo={v.tipo_financiacion || 'CUOTAS'} />
                   </div>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.5rem', fontSize: '0.8rem' }}>
                     <div>
@@ -324,7 +338,7 @@ export function VentasPage() {
           <div className="table-wrapper">
             <table className="table">
               <thead>
-                <tr><th>#</th><th>Cliente</th><th>Unidad</th><th>Fecha</th><th>Precio</th><th>Anticipo</th><th>Saldo Pend.</th><th>Estado</th><th></th></tr>
+                <tr><th>#</th><th>Cliente</th><th>Unidad</th><th>Fecha</th><th>Precio</th><th>Anticipo</th><th>Saldo Pend.</th><th>Financiación</th><th>Estado</th><th></th></tr>
               </thead>
               <tbody>
                 {loadVentas ? (
@@ -354,6 +368,7 @@ export function VentasPage() {
                     <td style={{ fontFamily: 'Space Grotesk', fontWeight: 700, color: (v.saldo_pendiente ?? 0) > 0 ? 'var(--danger)' : 'var(--success)' }}>
                       {eur(v.saldo_pendiente ?? 0)}
                     </td>
+                    <td><TipoFinBadge tipo={v.tipo_financiacion || 'CUOTAS'} /></td>
                     <td><EstadoBadge estado={v.estado_pago} /></td>
                     <td><button className="btn btn-ghost btn-sm btn-icon"><ChevronRight size={15} /></button></td>
                   </tr>

@@ -20,9 +20,15 @@ def calcular_proyeccion(horizonte_dias=30):
     """
     Calcula la Proyección Financiera según la fórmula de las pautas:
     Proyección = (Caja + Pagarés vigentes + Σ Bancos) - (Cuotas unidades + Sueldos + Servicios + Proveedores)
+
+    Tipos de financiación considerados:
+    - BANCARIA: el banco paga al concesionario de una vez → cobro esperado en ≤30 días
+    - CUOTAS:   el cliente paga cuotas directas al concesionario → se consideran las cuotas PagoVenta en el horizonte
+    - PROPIA:   concesionario financia a largo plazo → igual que CUOTAS (cuotas mensuales en PagoVenta)
+    - CONTADO:  ya cobrado → saldo 0, no proyecta nada
     """
     from caja.models import MovimientoCaja, CuentaBancaria, Pagare
-    from ventas.models import PagoVenta
+    from ventas.models import PagoVenta, VentaUnidad
     from compras.models import PagoCompraUnidad
     from rrhh.models import LiquidacionSueldo
 
@@ -50,11 +56,28 @@ def calcular_proyeccion(horizonte_dias=30):
         activo=True
     ).aggregate(t=Sum('saldo_actual'))['t'] or Decimal('0')
 
-    # 4. Cobros previstos: cuotas de clientes a vencer
-    cobros_previstos = PagoVenta.objects.filter(
+    # 4a. Cobros previstos — cuotas de clientes (CUOTAS y PROPIA) a vencer en el horizonte
+    cobros_cuotas = PagoVenta.objects.filter(
         pagado=False,
-        fecha_vencimiento__lte=horizonte
+        fecha_vencimiento__lte=horizonte,
+        venta__tipo_financiacion__in=['CUOTAS', 'PROPIA']
     ).aggregate(t=Sum('monto'))['t'] or Decimal('0')
+
+    # 4b. Cobros bancarios (BANCARIA) — el banco paga el saldo pendiente de una vez.
+    #     Se considera que el ingreso bancario llega dentro de 30 días desde la venta.
+    #     Solo se proyecta si el horizonte es >= 30 días O si la venta tiene < 30 días de antigüedad.
+    cobros_bancarios = Decimal('0')
+    ventas_bancarias = VentaUnidad.objects.filter(
+        tipo_financiacion='BANCARIA',
+        estado_pago__in=['PENDIENTE', 'PARCIAL', 'FINANCIADO']
+    )
+    for venta in ventas_bancarias:
+        dias_desde_venta = (hoy - venta.fecha_venta).days
+        # El banco suele liquidar en 30 días; si el horizonte lo cubre, se incluye
+        if dias_desde_venta <= horizonte_dias:
+            cobros_bancarios += venta.saldo_pendiente
+
+    cobros_previstos = cobros_cuotas + cobros_bancarios
 
     # ── PASIVOS ──────────────────────────────────────────────
     # 5. Cuotas de unidades a pagar a proveedores
@@ -93,6 +116,8 @@ def calcular_proyeccion(horizonte_dias=30):
         'pagares_en_cartera': pagares,
         'saldo_bancos': saldo_bancos,
         'cobros_previstos': cobros_previstos,
+        'cobros_cuotas_clientes': cobros_cuotas,
+        'cobros_bancarios': cobros_bancarios,
         'pagos_proveedores_unidades': pagos_unidades,
         'pagos_proveedores_insumos': pagos_insumos,
         'sueldos_previstos': sueldos_total,
