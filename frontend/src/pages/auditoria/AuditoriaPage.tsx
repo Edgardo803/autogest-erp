@@ -12,7 +12,6 @@ import {
 import { ModalNuevoPrograma } from '../../components/modals/ModalNuevoPrograma'
 import { ModalNuevoInforme } from '../../components/modals/ModalNuevoInforme'
 import toast from 'react-hot-toast'
-import jsPDF from 'jspdf'
 
 const NIVEL_CFG: Record<string, { color: string; bg: string; border: string; icon: any; label: string }> = {
   INFO:    { color: 'var(--accent-primary)',  bg: 'rgba(79,142,247,0.1)',  border: 'rgba(79,142,247,0.25)',  icon: Info,         label: 'Info' },
@@ -625,7 +624,8 @@ export function AuditoriaPage() {
                   <button
                     className="btn btn-sm btn-secondary"
                     style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.78rem' }}
-                    onClick={() => {
+                    onClick={async () => {
+                      const { default: jsPDF } = await import('jspdf')
                       const doc = new jsPDF()
                       const W = doc.internal.pageSize.getWidth()
                       doc.setFillColor(17, 24, 39)
@@ -645,7 +645,7 @@ export function AuditoriaPage() {
                       doc.text(`Fecha: ${inf.fecha_informe || '—'} · Emitido por: ${inf.creado_por?.username || '—'}`, 14, y)
                       y += 10
                       doc.setTextColor(30, 30, 30)
-                      const sections = [
+                      const sections: [string, string][] = [
                         ['Resumen Ejecutivo', inf.resumen_ejecutivo],
                         ['Observaciones', inf.observaciones],
                         ['Acciones Requeridas', inf.acciones_requeridas],
@@ -658,7 +658,7 @@ export function AuditoriaPage() {
                         const lines = doc.splitTextToSize(texto, W - 28)
                         doc.text(lines, 14, y); y += lines.length * 5 + 6
                       }
-                      doc.save(`informe_auditoria_${inf.id}_${new Date().toISOString().slice(0,10)}.pdf`)
+                      doc.save(`informe_auditoria_${inf.id}_${new Date().toISOString().slice(0, 10)}.pdf`)
                     }}
                   >
                     <Download size={13} /> Descargar PDF
