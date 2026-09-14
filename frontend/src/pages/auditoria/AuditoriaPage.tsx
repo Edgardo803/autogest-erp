@@ -1,15 +1,18 @@
 // Página de Auditoría — Solo Gerencia y Auditoría General
 import { useState } from 'react'
-import { useQuery } from '@tanstack/react-query'
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { Header } from '../../components/layout/Header'
 import { auditoriaApi } from '../../api/client'
 import { useAuth } from '../../context/AuthContext'
 import {
   Shield, AlertTriangle, AlertOctagon, Info,
-  Clock, FileText, Search, X, Eye, Plus
+  Clock, FileText, Search, X, Eye, Plus,
+  Play, CheckCircle2, Download, CheckCheck
 } from 'lucide-react'
 import { ModalNuevoPrograma } from '../../components/modals/ModalNuevoPrograma'
 import { ModalNuevoInforme } from '../../components/modals/ModalNuevoInforme'
+import toast from 'react-hot-toast'
+import jsPDF from 'jspdf'
 
 const NIVEL_CFG: Record<string, { color: string; bg: string; border: string; icon: any; label: string }> = {
   INFO:    { color: 'var(--accent-primary)',  bg: 'rgba(79,142,247,0.1)',  border: 'rgba(79,142,247,0.25)',  icon: Info,         label: 'Info' },
@@ -123,6 +126,7 @@ function ModalDetalleEvento({ evento, onClose }: { evento: any; onClose: () => v
 // ─── Página principal ─────────────────────────────────────────
 export function AuditoriaPage() {
   const { user } = useAuth()
+  const qc = useQueryClient()
   const [tab, setTab] = useState<'eventos' | 'programas' | 'informes'>('eventos')
   const [busqueda, setBusqueda] = useState('')
   const [filtroNivel, setFiltroNivel] = useState('')
@@ -131,9 +135,48 @@ export function AuditoriaPage() {
   const [modalPrograma, setModalPrograma] = useState(false)
   const [modalInforme, setModalInforme] = useState(false)
   const [programaParaInforme, setProgramaParaInforme] = useState<number | undefined>(undefined)
+  // IDs de eventos reconocidos por el auditor (persistido en localStorage)
+  const [revisados, setRevisados] = useState<Set<number>>(() => {
+    try { return new Set(JSON.parse(localStorage.getItem('eventos_revisados') || '[]')) }
+    catch { return new Set() }
+  })
 
   const esAuditor  = user?.rol === 'AUDITORIA'
   const esGerencia = user?.rol === 'GERENCIA' || user?.puede_ver_todo === true
+
+  const marcarRevisado = (id: number) => {
+    const nuevo = new Set(revisados)
+    nuevo.add(id)
+    setRevisados(nuevo)
+    localStorage.setItem('eventos_revisados', JSON.stringify([...nuevo]))
+    toast.success('Evento marcado como revisado')
+  }
+
+  // Mutación: Tomar auditoría (EN_PROCESO)
+  const { mutate: tomarAuditoria } = useMutation({
+    mutationFn: (prog: any) => auditoriaApi.updatePrograma(prog.id, {
+      estado: 'EN_PROCESO',
+      responsable: user?.id,
+    }),
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: ['programas-auditoria'] })
+      toast.success('Auditoría tomada — estado: En Proceso')
+    },
+    onError: () => toast.error('Error al actualizar el programa'),
+  })
+
+  // Mutación: Completar auditoría
+  const { mutate: completarAuditoria } = useMutation({
+    mutationFn: (prog: any) => auditoriaApi.updatePrograma(prog.id, {
+      estado: 'COMPLETADA',
+      fecha_realizacion: new Date().toISOString().split('T')[0],
+    }),
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: ['programas-auditoria'] })
+      toast.success('Auditoría completada ✓')
+    },
+    onError: () => toast.error('Error al actualizar el programa'),
+  })
 
   // ── Queries
   const { data: eventosData, isLoading: loadEv } = useQuery({
@@ -366,13 +409,27 @@ export function AuditoriaPage() {
                           {typeof ev.usuario === 'object' ? ev.usuario?.username : ev.usuario}
                         </td>
                         <td style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontFamily: 'Space Grotesk' }}>{ev.ip_origen}</td>
-                        <td>
+                        <td style={{ display: 'flex', gap: '0.4rem', alignItems: 'center' }}>
                           <button
                             onClick={() => setEventoDetalle(ev)}
                             style={{ background: 'var(--bg-surface)', border: '1px solid var(--border-subtle)', borderRadius: 6, padding: '0.25rem 0.5rem', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.25rem', fontSize: '0.72rem', color: 'var(--text-muted)' }}
                           >
                             <Eye size={11} /> Ver
                           </button>
+                          {(ev.nivel === 'CRITICO' || ev.nivel === 'ALERTA') && (esAuditor || esGerencia) && (
+                            revisados.has(ev.id) ? (
+                              <span style={{ fontSize: '0.68rem', color: 'var(--accent-success)', display: 'flex', alignItems: 'center', gap: '0.2rem', fontWeight: 600 }}>
+                                <CheckCheck size={11} /> Revisado
+                              </span>
+                            ) : (
+                              <button
+                                onClick={() => marcarRevisado(ev.id)}
+                                style={{ background: 'rgba(34,201,120,0.08)', border: '1px solid rgba(34,201,120,0.25)', borderRadius: 6, padding: '0.25rem 0.5rem', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.25rem', fontSize: '0.68rem', color: 'var(--accent-success)' }}
+                              >
+                                <CheckCheck size={10} /> Revisar
+                              </button>
+                            )
+                          )}
                         </td>
                       </tr>
                     )
@@ -460,8 +517,36 @@ export function AuditoriaPage() {
                         </div>
                       </div>
                     )}
+                    {/* Botones de acción para el Auditor */}
+                    {(esAuditor || esGerencia) && prog.estado === 'PROGRAMADA' && (
+                      <button
+                        className="btn btn-sm"
+                        style={{ background: 'rgba(79,142,247,0.12)', color: 'var(--accent-primary)', border: '1px solid rgba(79,142,247,0.3)', fontSize: '0.75rem', whiteSpace: 'nowrap' }}
+                        onClick={() => tomarAuditoria(prog)}
+                      >
+                        <Play size={12} /> Tomar auditoría
+                      </button>
+                    )}
+                    {(esAuditor || esGerencia) && prog.estado === 'EN_PROCESO' && (
+                      <button
+                        className="btn btn-sm"
+                        style={{ background: 'rgba(34,201,120,0.1)', color: 'var(--accent-success)', border: '1px solid rgba(34,201,120,0.3)', fontSize: '0.75rem', whiteSpace: 'nowrap' }}
+                        onClick={() => completarAuditoria(prog)}
+                      >
+                        <CheckCircle2 size={12} /> Completar
+                      </button>
+                    )}
                     {/* Botón emitir informe — para programas sin informe aún */}
-                    {!prog.informe_generado && prog.estado !== 'CANCELADA' && (esAuditor || esGerencia) && (
+                    {!prog.informe_generado && prog.estado === 'COMPLETADA' && (esAuditor || esGerencia) && (
+                      <button
+                        className="btn btn-sm"
+                        style={{ background: 'rgba(79,142,247,0.1)', color: 'var(--accent-primary)', border: '1px solid rgba(79,142,247,0.25)', fontSize: '0.75rem', whiteSpace: 'nowrap' }}
+                        onClick={() => { setProgramaParaInforme(prog.id); setModalInforme(true) }}
+                      >
+                        <FileText size={12} /> Emitir Informe
+                      </button>
+                    )}
+                    {!prog.informe_generado && prog.estado !== 'COMPLETADA' && prog.estado !== 'CANCELADA' && (esAuditor || esGerencia) && (
                       <button
                         className="btn btn-sm"
                         style={{ background: 'rgba(79,142,247,0.1)', color: 'var(--accent-primary)', border: '1px solid rgba(79,142,247,0.25)', fontSize: '0.75rem', whiteSpace: 'nowrap' }}
@@ -535,6 +620,50 @@ export function AuditoriaPage() {
                     {inf.acciones_requeridas}
                   </div>
                 )}
+                {/* Botón descargar PDF del informe */}
+                <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '0.75rem' }}>
+                  <button
+                    className="btn btn-sm btn-secondary"
+                    style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.78rem' }}
+                    onClick={() => {
+                      const doc = new jsPDF()
+                      const W = doc.internal.pageSize.getWidth()
+                      doc.setFillColor(17, 24, 39)
+                      doc.rect(0, 0, W, 22, 'F')
+                      doc.setTextColor(255, 255, 255)
+                      doc.setFontSize(11); doc.setFont('helvetica', 'bold')
+                      doc.text('AutoGest ERP — Informe de Auditoría', 14, 9)
+                      doc.setFontSize(9); doc.setFont('helvetica', 'normal')
+                      doc.text(`Generado: ${new Date().toLocaleDateString('es-ES')}`, W - 14, 9, { align: 'right' })
+                      doc.setTextColor(30, 30, 30)
+                      let y = 34
+                      doc.setFontSize(14); doc.setFont('helvetica', 'bold')
+                      doc.text(`Informe #${inf.id} — Riesgo: ${inf.nivel_riesgo_display || inf.nivel_riesgo}`, 14, y)
+                      y += 8
+                      doc.setFontSize(9); doc.setFont('helvetica', 'normal')
+                      doc.setTextColor(100, 116, 139)
+                      doc.text(`Fecha: ${inf.fecha_informe || '—'} · Emitido por: ${inf.creado_por?.username || '—'}`, 14, y)
+                      y += 10
+                      doc.setTextColor(30, 30, 30)
+                      const sections = [
+                        ['Resumen Ejecutivo', inf.resumen_ejecutivo],
+                        ['Observaciones', inf.observaciones],
+                        ['Acciones Requeridas', inf.acciones_requeridas],
+                      ]
+                      for (const [titulo, texto] of sections) {
+                        if (!texto) continue
+                        doc.setFontSize(10); doc.setFont('helvetica', 'bold')
+                        doc.text(titulo, 14, y); y += 5
+                        doc.setFont('helvetica', 'normal'); doc.setFontSize(9)
+                        const lines = doc.splitTextToSize(texto, W - 28)
+                        doc.text(lines, 14, y); y += lines.length * 5 + 6
+                      }
+                      doc.save(`informe_auditoria_${inf.id}_${new Date().toISOString().slice(0,10)}.pdf`)
+                    }}
+                  >
+                    <Download size={13} /> Descargar PDF
+                  </button>
+                </div>
               </div>
             )
           })}

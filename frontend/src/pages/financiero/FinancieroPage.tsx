@@ -1,9 +1,9 @@
 // Página de Proyección Financiera — La joya de la corona
 import { useState } from 'react'
-import { useQuery, useMutation } from '@tanstack/react-query'
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { Header } from '../../components/layout/Header'
 import { financieroApi } from '../../api/client'
-import { TrendingUp, TrendingDown, RefreshCw, Save, Calculator, AlertTriangle, CheckCircle2 } from 'lucide-react'
+import { TrendingUp, TrendingDown, RefreshCw, Save, Calculator, AlertTriangle, CheckCircle2, History } from 'lucide-react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine } from 'recharts'
 import toast from 'react-hot-toast'
 
@@ -12,6 +12,7 @@ const eur = (n: number) =>
 
 export function FinancieroPage() {
   const [horizonte, setHorizonte] = useState<30 | 60 | 90>(30)
+  const qc = useQueryClient()
 
   const { data: calc, isLoading, refetch } = useQuery({
     queryKey: ['proyeccion-calcular'],
@@ -19,9 +20,18 @@ export function FinancieroPage() {
     refetchInterval: 120000,
   })
 
+  const { data: snapshotsData } = useQuery({
+    queryKey: ['proyeccion-snapshots'],
+    queryFn: () => financieroApi.snapshots().then(r => r.data.results || r.data),
+  })
+  const snapshots: any[] = snapshotsData || []
+
   const { mutate: guardarSnapshot, isPending: guardando } = useMutation({
     mutationFn: () => financieroApi.guardarSnapshot(horizonte),
-    onSuccess: () => toast.success('Snapshot guardado correctamente'),
+    onSuccess: () => {
+      toast.success('Snapshot guardado correctamente')
+      qc.invalidateQueries({ queryKey: ['proyeccion-snapshots'] })
+    },
     onError: () => toast.error('Error al guardar el snapshot'),
   })
 
@@ -143,10 +153,9 @@ export function FinancieroPage() {
             )}
 
             {/* Gráfico comparativo 30/60/90 días */}
-            <div className="card">
+            <div className="card" style={{ marginBottom: '1.5rem' }}>
               <div className="card-header">
                 <div className="card-title">Comparativo: Activos vs Pasivos (30 / 60 / 90 días)</div>
-                {/* Leyenda de colores */}
                 <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
                   {[
                     { color: '#4f8ef7', label: 'Total Activos' },
@@ -178,9 +187,72 @@ export function FinancieroPage() {
                 </BarChart>
               </ResponsiveContainer>
             </div>
+
+            {/* ── Historial de Snapshots ── */}
+            <div className="card">
+              <div className="card-header">
+                <div className="card-title" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <History size={16} /> Historial de Snapshots Guardados
+                </div>
+                <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>{snapshots.length} guardado{snapshots.length !== 1 ? 's' : ''}</span>
+              </div>
+              {snapshots.length === 0 ? (
+                <div style={{ padding: '2rem', textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.875rem' }}>
+                  No hay snapshots guardados aún. Usá el botón "Guardar Snapshot" para registrar la proyección actual.
+                </div>
+              ) : (
+                <div className="table-wrapper">
+                  <table className="table">
+                    <thead>
+                      <tr>
+                        <th>Fecha / Hora</th>
+                        <th>Horizonte</th>
+                        <th>Activos</th>
+                        <th>Pasivos</th>
+                        <th>Posición Neta</th>
+                        <th>Estado</th>
+                        <th>Guardado por</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {snapshots.map((s: any) => {
+                        const pNeta = Number(s.posicion_neta || 0)
+                        const ok = pNeta >= 0
+                        return (
+                          <tr key={s.id}>
+                            <td style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontFamily: 'Space Grotesk' }}>
+                              {new Date(s.fecha_calculo).toLocaleString('es-ES', { day: '2-digit', month: '2-digit', year: '2-digit', hour: '2-digit', minute: '2-digit' })}
+                            </td>
+                            <td><span className="badge badge-primary">{s.horizonte_dias || '—'} días</span></td>
+                            <td style={{ fontFamily: 'Space Grotesk', color: 'var(--accent-success)', fontWeight: 600 }}>
+                              {eur(Number(s.total_activos || 0))}
+                            </td>
+                            <td style={{ fontFamily: 'Space Grotesk', color: 'var(--accent-danger)', fontWeight: 600 }}>
+                              {eur(Number(s.total_pasivos || 0))}
+                            </td>
+                            <td style={{ fontFamily: 'Space Grotesk', fontWeight: 700, color: ok ? 'var(--accent-success)' : 'var(--accent-danger)' }}>
+                              {ok ? '+' : ''}{eur(pNeta)}
+                            </td>
+                            <td>
+                              <span className={`badge ${ok ? 'badge-success' : 'badge-danger'}`}>
+                                {ok ? '✓ Saludable' : '⚠ Negativa'}
+                              </span>
+                            </td>
+                            <td style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+                              {s.creado_por?.username || s.creado_por || '—'}
+                            </td>
+                          </tr>
+                        )
+                      })}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+            </div>
           </>
         )}
       </div>
     </div>
   )
 }
+

@@ -101,6 +101,7 @@ export const financieroApi = {
   calcular: () => api.get('/financiero/proyecciones/calcular/'),
   guardarSnapshot: (horizonte: number) =>
     api.post('/financiero/proyecciones/guardar-snapshot/', { horizonte_dias: horizonte }),
+  snapshots: () => api.get('/financiero/proyecciones/'),
   obligaciones: () => api.get('/financiero/obligaciones/'),
 }
 
