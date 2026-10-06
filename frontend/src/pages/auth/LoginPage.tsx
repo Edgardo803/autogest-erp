@@ -23,7 +23,12 @@ export function LoginPage() {
       toast.success('¡Bienvenido a AutoGest ERP!')
       navigate('/dashboard')
     } catch (err: any) {
-      const msg = err.response?.data?.detail || 'Credenciales incorrectas'
+      let msg = 'Credenciales incorrectas'
+      if (err.response?.status >= 500) {
+        msg = 'Error en el servidor. Por favor, reintente en unos instantes.'
+      } else if (err.response?.data?.detail) {
+        msg = err.response.data.detail
+      }
       toast.error(msg)
     } finally {
       setLoading(false)
